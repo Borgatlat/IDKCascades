@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 
-DEFAULT_H24_DIR = Path("datasets/h24")
+DEFAULT_H24_DIR = Path("datasets/h24/h24")
 DEFAULT_OUTPUT_DIR = Path("datasets/processed")
 
 
@@ -176,6 +176,127 @@ def segments_to_spectrograms(
     return np.stack(spectrograms), np.array(labels, dtype=np.int64)
 
 
+def segments_to_spectrograms_with_keys(
+    segments: pd.DataFrame,
+    sample_col: str = "samples",
+    segment_col: str = "segment_id",
+    run_col: str = "run_id",
+    sensor_col: str = "sensor_id",
+    segment_num_col: str = "segment_number",
+    n_fft: int = 256,
+    hop_length: int | None = None,
+    target_samples: int | None = None,
+) -> tuple[np.ndarray, list[dict]]:
+    """Like segments_to_spectrograms but also returns per-segment metadata dicts."""
+    if hop_length is None:
+        hop_length = n_fft // 2
+
+    required_cols = {sample_col, segment_col, run_col, sensor_col, segment_num_col}
+    missing_cols = required_cols - set(segments.columns)
+    if missing_cols:
+        raise ValueError(f"segments is missing columns: {sorted(missing_cols)}")
+
+    grouped = segments.groupby(segment_col, sort=True)
+    if target_samples is None:
+        target_samples = int(grouped.size().max())
+    if target_samples < n_fft:
+        target_samples = n_fft
+
+    window = np.hanning(n_fft).astype(np.float32)
+    spectrograms: list[np.ndarray] = []
+    meta_rows: list[dict] = []
+
+    for _, segment in grouped:
+        signal = segment[sample_col].to_numpy(dtype=np.float32)
+        if signal.size < target_samples:
+            signal = np.pad(signal, (0, target_samples - signal.size))
+        else:
+            signal = signal[:target_samples]
+
+        run_id = str(segment[run_col].iloc[0])
+        sensor_id = str(segment[sensor_col].iloc[0])
+        seg_num = int(segment[segment_num_col].iloc[0])
+        segment_key = f"{run_id}_{sensor_id}_seg{seg_num:05d}"
+
+        spectrograms.append(_stft_magnitude(signal, n_fft, hop_length, window))
+        meta_rows.append(
+            {
+                "segment_key": segment_key,
+                "run_id": run_id,
+                "sensor_id": sensor_id,
+                "segment_number": seg_num,
+            }
+        )
+
+    return np.stack(spectrograms), meta_rows
+
+
+def save_h24_paired_arrays(
+    output_dir: str | Path = DEFAULT_OUTPUT_DIR,
+    data_dir: str | Path = DEFAULT_H24_DIR,
+    segment_seconds: float = 2.0,
+    n_fft: int = 256,
+    hop_length: int | None = None,
+) -> tuple[np.ndarray, np.ndarray, pd.DataFrame]:
+    """Build aligned mic/geo spectrogram pairs and metadata for hierarchical Ki training."""
+    from utils.labels import metadata_row_labels
+
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    data_dir = Path(data_dir)
+
+    mic_files = sorted(data_dir.glob("*_mic.parquet"))
+    if not mic_files:
+        raise FileNotFoundError(f"No *_mic.parquet files found in {data_dir}.")
+
+    mic_specs_all: list[np.ndarray] = []
+    geo_specs_all: list[np.ndarray] = []
+    metadata_rows: list[dict] = []
+
+    for index, mic_path in enumerate(mic_files, start=1):
+        geo_path = mic_path.with_name(mic_path.name.replace("_mic.parquet", "_geo.parquet"))
+        if not geo_path.exists():
+            raise FileNotFoundError(f"Missing paired geo file for {mic_path.name}")
+
+        print(f"  [{index}/{len(mic_files)}] {mic_path.name}")
+        mic_df = _read_and_segment_file(mic_path, "_mic", segment_seconds, "timestamp")
+        geo_df = _read_and_segment_file(geo_path, "_geo", segment_seconds, "timestamp")
+
+        mic_specs, mic_meta = segments_to_spectrograms_with_keys(
+            mic_df, n_fft=n_fft, hop_length=hop_length
+        )
+        geo_specs, geo_meta = segments_to_spectrograms_with_keys(
+            geo_df, n_fft=n_fft, hop_length=hop_length
+        )
+
+        mic_keys = [row["segment_key"] for row in mic_meta]
+        geo_keys = [row["segment_key"] for row in geo_meta]
+        if mic_keys != geo_keys:
+            raise ValueError(f"Mic/geo segment mismatch in {mic_path.name}")
+
+        for row, mic_spec, geo_spec in zip(mic_meta, mic_specs, geo_specs):
+            labels = metadata_row_labels(row["run_id"])
+            metadata_rows.append({**row, **labels})
+            mic_specs_all.append(mic_spec)
+            geo_specs_all.append(geo_spec)
+
+        del mic_df, geo_df
+
+    mic_array = np.stack(mic_specs_all)
+    geo_array = np.stack(geo_specs_all)
+    metadata = pd.DataFrame(metadata_rows)
+
+    np.save(output_dir / "h24_paired_mic.npy", mic_array)
+    np.save(output_dir / "h24_paired_geo.npy", geo_array)
+    metadata.to_parquet(output_dir / "h24_metadata.parquet", index=False)
+
+    # Legacy single-modality caches (same data, new layout).
+    np.save(output_dir / "h24_mic_spectrograms.npy", mic_array)
+    np.save(output_dir / "h24_geo_spectrograms.npy", geo_array)
+
+    return mic_array, geo_array, metadata
+
+
 def save_h24_spectrogram_arrays(
     output_dir: str | Path = DEFAULT_OUTPUT_DIR,
     data_dir: str | Path = DEFAULT_H24_DIR,
@@ -183,25 +304,48 @@ def save_h24_spectrogram_arrays(
     n_fft: int = 256,
     hop_length: int | None = None,
 ) -> tuple[tuple[np.ndarray, np.ndarray], tuple[np.ndarray, np.ndarray]]:
-    """Create and save spectrogram/label arrays for h24 mic and geo data."""
+    """Create and save spectrogram/label arrays for h24 mic and geo data.
+
+    Files are processed one at a time so we do not load the full h24 subset
+    (~174M waveform rows) into memory at once.
+    """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    data_dir = Path(data_dir)
 
-    mic_df, geo_df = load_h24_two_second_segments(
-        data_dir=data_dir,
-        segment_seconds=segment_seconds,
-    )
+    mic_files = sorted(data_dir.glob("*_mic.parquet"))
+    geo_files = sorted(data_dir.glob("*_geo.parquet"))
+    if not mic_files:
+        raise FileNotFoundError(f"No *_mic.parquet files found in {data_dir}.")
+    if not geo_files:
+        raise FileNotFoundError(f"No *_geo.parquet files found in {data_dir}.")
 
-    mic_spectrograms, mic_labels = segments_to_spectrograms(
-        mic_df,
-        n_fft=n_fft,
-        hop_length=hop_length,
-    )
-    geo_spectrograms, geo_labels = segments_to_spectrograms(
-        geo_df,
-        n_fft=n_fft,
-        hop_length=hop_length,
-    )
+    def _process_files(files: list[Path], suffix: str) -> tuple[np.ndarray, np.ndarray]:
+        all_specs: list[np.ndarray] = []
+        all_labels: list[np.ndarray] = []
+        for index, file_path in enumerate(files, start=1):
+            print(f"  [{index}/{len(files)}] {file_path.name}")
+            segment_df = _read_and_segment_file(
+                file_path,
+                suffix,
+                segment_seconds,
+                "timestamp",
+            )
+            specs, labels = segments_to_spectrograms(
+                segment_df,
+                n_fft=n_fft,
+                hop_length=hop_length,
+            )
+            all_specs.append(specs)
+            all_labels.append(labels)
+            del segment_df
+
+        return np.concatenate(all_specs, axis=0), np.concatenate(all_labels, axis=0)
+
+    print("Processing microphone spectrograms...")
+    mic_spectrograms, mic_labels = _process_files(mic_files, "_mic")
+    print("Processing geophone spectrograms...")
+    geo_spectrograms, geo_labels = _process_files(geo_files, "_geo")
 
     np.save(output_dir / "h24_mic_spectrograms.npy", mic_spectrograms)
     np.save(output_dir / "h24_mic_labels.npy", mic_labels)
