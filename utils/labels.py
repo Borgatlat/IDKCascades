@@ -78,7 +78,30 @@ KI_REGISTRY: dict[str, KiSpec] = {
     "K4": KiSpec("K4", "specialized_suv", SUV_SPECIALIZED_NAMES, "mic", "suv"),
     "K5": KiSpec("K5", "specialized_coupe", COUPE_SPECIALIZED_NAMES, "mic", "coupe"),
     "K6": KiSpec("K6", "specialized_coupe", COUPE_SPECIALIZED_NAMES, "both", "coupe"),
+    "Kdet": KiSpec("Kdet", "deterministic", GLOBAL_CLASS_NAMES, "both", "all") #both beacuas its global 
 }
+
+# Paper Section V-A (RTSS 2025): required confidence H_i for IDK deferral.
+# Global Ki: 0.90; intermediate + specialized Ki: 0.95 (≤10% cumulative error).
+PAPER_THRESHOLD_HI_BY_LEVEL: dict[str, float] = {
+    "intermediate": 0.95,
+    "global": 0.90,
+    "specialized_suv": 0.95,
+    "specialized_coupe": 0.95,
+}
+
+
+def is_deterministic_ki(ki_name: str) -> bool:
+    """True for Kdet — never defers, always returns a base class."""
+    return KI_REGISTRY[ki_name].level == "deterministic"
+
+
+def threshold_hi_for_ki(ki_name: str) -> float | None:
+    """Return paper-calibrated H_i for one Ki classifier, or None for Kdet."""
+    if is_deterministic_ki(ki_name):
+        return None
+    level = KI_REGISTRY[ki_name].level
+    return PAPER_THRESHOLD_HI_BY_LEVEL[level]
 
 
 def label_to_index(label: str, class_names: list[str]) -> int:

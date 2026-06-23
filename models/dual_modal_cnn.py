@@ -67,16 +67,20 @@ class DualModalCNN(nn.Module):
 
 
 def build_ki_model(ki_name: str, num_classes: int) -> nn.Module:
-    """Instantiate architecture sized for paper Ki roles."""
-    # Width/depth/hidden tuned to paper Table IV param counts (~130k–1.2M).
+    """Instantiate architecture sized for paper Table IV param counts."""
+    # Target params (paper): K0 129698, K1 356610, K2 130469, K3 1217109,
+    # K4/K5 80355, K6 129955.
     presets: dict[str, dict] = {
         "K0": {"kind": "dual", "width": 16, "depth": 2, "hidden": 128},
         "K1": {"kind": "dual", "width": 18, "depth": 3, "hidden": 128},
         "K2": {"kind": "dual", "width": 16, "depth": 2, "hidden": 128},
-        "K3": {"kind": "dual", "width": 24, "depth": 4, "hidden": 128},
+        # width=27, depth=4, hidden=96 -> ~1,218,173 params (paper: 1,217,109)
+        "K3": {"kind": "dual", "width": 27, "depth": 4, "hidden": 96},
         "K4": {"kind": "mic", "width": 16, "depth": 2, "hidden": 64},
         "K5": {"kind": "mic", "width": 16, "depth": 2, "hidden": 64},
         "K6": {"kind": "dual", "width": 16, "depth": 2, "hidden": 128},
+        # depth=5 exceeds MaxPool budget for 129x24 spectrograms; use depth=4 + wider towers.
+        "Kdet": {"kind": "dual", "width": 48, "depth": 4, "hidden": 224},
     }
     cfg = presets[ki_name]
     if cfg["kind"] == "mic":

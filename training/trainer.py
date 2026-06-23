@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import time
 from contextlib import nullcontext
@@ -21,8 +22,12 @@ from models.spectrogram_cnn import count_parameters
 from training.augment import apply_spec_augment
 from training.losses import LOSS_KEYS, build_loss, loss_uses_class_weights
 from training.metrics import compute_metrics
-from utils.labels import KI_REGISTRY, KiSpec
+from utils.classifier_registry import ClassifierRegistry, compute_p_idk
+from utils.labels import KI_REGISTRY, KiSpec, is_deterministic_ki, threshold_hi_for_ki
 from utils.splits import apply_background_val_holdout, run_level_masks
+
+
+
 
 
 def normalize_spectrograms(x: np.ndarray) -> np.ndarray:
@@ -75,10 +80,10 @@ def get_ki_labels(metadata: pd.DataFrame, spec: KiSpec) -> np.ndarray:
     raise ValueError(f"Unknown subset: {spec.subset}")
 
 
-def prepare_ki_arrays(
-    spec: KiSpec,
+def load_spectrogram_cache(
     processed_dir: Path,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray, pd.DataFrame, list[str]]:
+) -> tuple[np.ndarray, np.ndarray, pd.DataFrame]:
+    """Load normalized mic/geo + metadata once (reuse across K0–K6 in train-all)."""
     norm_mic = processed_dir / "h24_paired_mic_norm.npy"
     norm_geo = processed_dir / "h24_paired_geo_norm.npy"
     meta_path = processed_dir / "h24_metadata.parquet"
@@ -93,6 +98,19 @@ def prepare_ki_arrays(
         np.save(norm_geo, geo)
 
     metadata = pd.read_parquet(meta_path)
+    return mic, geo, metadata
+
+
+def prepare_ki_arrays(
+    spec: KiSpec,
+    processed_dir: Path,
+    cache: tuple[np.ndarray, np.ndarray, pd.DataFrame] | None = None,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, pd.DataFrame, list[str]]:
+    if cache is not None:
+        mic, geo, metadata = cache
+    else:
+        mic, geo, metadata = load_spectrogram_cache(processed_dir)
+
     labels = get_ki_labels(metadata, spec)
     return mic, geo, labels, metadata, spec.class_names
 
@@ -219,6 +237,8 @@ class TrainResult:
     best_metrics: dict = field(default_factory=dict)
     inference_avg_ms: float | None = None
     inference_wcet_ms: float | None = None
+    p_idk: float | None = None
+    threshold_hi: float | None = None
 
 
 def run_epoch(
@@ -311,6 +331,55 @@ def _build_lr_scheduler(
     return SequentialLR(optimizer, schedulers=[warmup, cosine], milestones=[warmup_epochs])
 
 
+def _read_train_log_text(log_path: Path) -> str:
+    """Windows Tee-Object writes UTF-16; fallback to UTF-8 for other logs."""
+    raw = log_path.read_bytes()
+    if raw.startswith(b"\xff\xfe") or raw.startswith(b"\xfe\xff"):
+        return raw.decode("utf-16", errors="replace")
+    return raw.decode("utf-8", errors="replace")
+
+
+def _last_epoch_from_train_log(log_path: Path, ki_name: str) -> int:
+    """Parse the highest completed epoch from a Ki training log (crash-recovery fallback)."""
+    if not log_path.exists():
+        return 0
+    pattern = re.compile(rf"^{re.escape(ki_name)} ep (\d+)/")
+    last = 0
+    for line in _read_train_log_text(log_path).splitlines():
+        match = pattern.match(line.strip())
+        if match:
+            last = max(last, int(match.group(1)))
+    return last
+
+
+def _write_train_metrics(
+    metrics_path: Path,
+    *,
+    ki_name: str,
+    loss_key: str,
+    best_f1: float,
+    best_loss: float,
+    num_params: int,
+    ckpt_path: Path,
+    history: list[dict],
+    best_metrics: dict,
+    threshold_hi: float | None,
+) -> None:
+    """Persist metrics after each epoch so a crash does not rewind resume state."""
+    partial = TrainResult(
+        ki=ki_name,
+        loss_key=loss_key,
+        best_val_macro_f1=best_f1,
+        best_val_loss=best_loss,
+        num_params=num_params,
+        checkpoint=str(ckpt_path),
+        history=history,
+        best_metrics=best_metrics,
+        threshold_hi=threshold_hi,
+    )
+    metrics_path.write_text(json.dumps(partial.__dict__, indent=2))
+
+
 def train_ki(
     ki_name: str,
     processed_dir: Path,
@@ -324,8 +393,17 @@ def train_ki(
     arrays: tuple[np.ndarray, np.ndarray, np.ndarray, pd.DataFrame, list[str]] | None = None,
     warmup_epochs: int = 3,
     augment_train: bool = True,
-    profile_inference: bool = True,
+    profile_inference: bool = False,
+    use_torch_compile: bool = True,
+    threshold_hi: float | None = None,
+    registry: ClassifierRegistry | None = None,
+    resume_from_checkpoint: bool = False,
 ) -> TrainResult:
+
+
+    if threshold_hi is None and not is_deterministic_ki(ki_name):
+        threshold_hi = threshold_hi_for_ki(ki_name)
+
     torch.manual_seed(seed)
     np.random.seed(seed)
 
@@ -347,6 +425,8 @@ def train_ki(
     train_label_tensor = torch.from_numpy(labels[train_mask].astype(np.int64))
 
     model = build_ki_model(ki_name, len(class_names)).to(device)
+    if use_torch_compile and device.type == "cuda" and hasattr(torch, "compile"):
+        model = torch.compile(model)
     criterion = build_loss(loss_key, len(class_names), train_label_tensor, device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=1e-4)
     scheduler = _build_lr_scheduler(optimizer, epochs, warmup_epochs)
@@ -354,14 +434,35 @@ def train_ki(
 
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
     ckpt_path = checkpoint_dir / f"{ki_name}.pt"
+    metrics_path = checkpoint_dir / f"{ki_name}_metrics.json"
+    train_log_path = checkpoint_dir / f"{ki_name}_train.log"
 
     best_f1 = -1.0
     best_loss = float("inf")
     best_metrics: dict = {}
     history: list[dict] = []
     stale_epochs = 0
+    start_epoch = 1
 
-    for epoch in range(1, epochs + 1):
+    if resume_from_checkpoint and ckpt_path.exists():
+        ckpt = torch.load(ckpt_path, map_location=device, weights_only=True)
+        model.load_state_dict(ckpt["model_state_dict"])
+        best_f1 = float(ckpt.get("val_macro_f1", -1.0))
+        if metrics_path.exists():
+            prior = json.loads(metrics_path.read_text())
+            history = prior.get("history", [])
+            best_metrics = prior.get("best_metrics", {})
+            best_loss = float(prior.get("best_val_loss", float("inf")))
+            start_epoch = len(history) + 1
+        log_epoch = _last_epoch_from_train_log(train_log_path, ki_name)
+        if log_epoch >= start_epoch:
+            start_epoch = log_epoch + 1
+        print(
+            f"{ki_name}: resumed from {ckpt_path} "
+            f"(epoch {start_epoch - 1}, best F1 {best_f1:.3f})"
+        )
+
+    for epoch in range(start_epoch, epochs + 1):
         t0 = time.perf_counter()
         train_loss, train_raw = run_epoch(
             model, train_loader, criterion, optimizer, device, spec.modality, scaler
@@ -419,6 +520,19 @@ def train_ki(
                 print(f"{ki_name}: early stop at epoch {epoch}")
                 break
 
+        _write_train_metrics(
+            metrics_path,
+            ki_name=ki_name,
+            loss_key=loss_key,
+            best_f1=best_f1,
+            best_loss=best_loss,
+            num_params=count_parameters(model),
+            ckpt_path=ckpt_path,
+            history=history,
+            best_metrics=best_metrics,
+            threshold_hi=threshold_hi,
+        )
+
     # Restore best checkpoint weights (early stop leaves worse last-epoch weights in memory).
     if ckpt_path.exists():
         ckpt = torch.load(ckpt_path, map_location=device, weights_only=True)
@@ -436,6 +550,15 @@ def train_ki(
         wcet_ms = timing["wcet_ms"]
         print(f"{ki_name}: inference avg={avg_ms:.2f}ms WCET={wcet_ms:.2f}ms (val loader batch)")
 
+    # P{IDK}: fraction of val samples with max(softmax) < H_i (precision-calibrated deferral).
+
+    if is_deterministic_ki(ki_name):
+        p_idk = 0.0
+        print(f"{ki_name}: deterministic fallback (p_idk=0.0, no H_i)")
+    else:
+        p_idk = compute_p_idk(model, val_loader, device, spec.modality, threshold_hi)
+        print(f"{ki_name}: p_idk={p_idk:.4f} at H_i={threshold_hi}")
+
     result = TrainResult(
         ki=ki_name,
         loss_key=loss_key,
@@ -447,9 +570,14 @@ def train_ki(
         best_metrics=best_metrics,
         inference_avg_ms=avg_ms,
         inference_wcet_ms=wcet_ms,
+        p_idk=p_idk,
+        threshold_hi=threshold_hi,
     )
-    metrics_path = checkpoint_dir / f"{ki_name}_metrics.json"
     metrics_path.write_text(json.dumps(result.__dict__, indent=2))
+
+    if registry is not None:
+        registry.upsert_from_train_result(result, threshold_hi=threshold_hi)
+
     return result
 
 

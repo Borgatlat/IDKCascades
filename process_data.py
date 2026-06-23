@@ -6,6 +6,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import torch
+import torch.nn.functional as F
 
 
 DEFAULT_H24_DIR = Path("datasets/h24/h24")
@@ -231,6 +233,15 @@ def segments_to_spectrograms_with_keys(
     return np.stack(spectrograms), meta_rows
 
 
+def _resize_geo_to_mic(geo_spec: np.ndarray, mic_shape: tuple[int, int]) -> np.ndarray:
+    """Resize geo STFT to mic grid once at preprocess (avoids interpolate every forward pass)."""
+    if geo_spec.shape == mic_shape:
+        return geo_spec
+    t = torch.from_numpy(geo_spec.astype(np.float32)).unsqueeze(0).unsqueeze(0)
+    t = F.interpolate(t, size=mic_shape, mode="bilinear", align_corners=False)
+    return t.squeeze(0).squeeze(0).numpy()
+
+
 def save_h24_paired_arrays(
     output_dir: str | Path = DEFAULT_OUTPUT_DIR,
     data_dir: str | Path = DEFAULT_H24_DIR,
@@ -278,7 +289,7 @@ def save_h24_paired_arrays(
             labels = metadata_row_labels(row["run_id"])
             metadata_rows.append({**row, **labels})
             mic_specs_all.append(mic_spec)
-            geo_specs_all.append(geo_spec)
+            geo_specs_all.append(_resize_geo_to_mic(geo_spec, mic_spec.shape))
 
         del mic_df, geo_df
 
@@ -289,6 +300,12 @@ def save_h24_paired_arrays(
     np.save(output_dir / "h24_paired_mic.npy", mic_array)
     np.save(output_dir / "h24_paired_geo.npy", geo_array)
     metadata.to_parquet(output_dir / "h24_metadata.parquet", index=False)
+
+    # Drop stale normalized caches so trainer rebuilds from resized geo.
+    for stale in ("h24_paired_mic_norm.npy", "h24_paired_geo_norm.npy"):
+        stale_path = output_dir / stale
+        if stale_path.exists():
+            stale_path.unlink()
 
     # Legacy single-modality caches (same data, new layout).
     np.save(output_dir / "h24_mic_spectrograms.npy", mic_array)
