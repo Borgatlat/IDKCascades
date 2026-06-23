@@ -16,7 +16,9 @@ def build_bundle(repo_root: Path, output_zip: Path) -> None:
         shutil.rmtree(staging)
 
     ckpt_dst = staging / "checkpoints"
-    ckpt_dst.mkdir(parents=True)
+    weights_dst = ckpt_dst / "weights"
+    weights_dst.mkdir(parents=True, exist_ok=True)
+    ckpt_dst.mkdir(parents=True, exist_ok=True)
 
     src_ckpt = repo_root / "checkpoints"
     for name in KI_NAMES:
@@ -25,14 +27,24 @@ def build_bundle(repo_root: Path, output_zip: Path) -> None:
         if metrics.exists():
             shutil.copy2(metrics, ckpt_dst / metrics.name)
 
+        weights = src_ckpt / "weights" / f"{name}_weights.pt"
+        if weights.exists():
+            shutil.copy2(weights, weights_dst / weights.name)
+
     for extra in ("classifier_registry.json", "wcet_profile.json"):
         path = src_ckpt / extra
         if path.exists():
             shutil.copy2(path, ckpt_dst / extra)
 
-    readme = repo_root / "TEAMMATE_SETUP.md"
-    if readme.exists():
-        shutil.copy2(readme, staging / "TEAMMATE_SETUP.md")
+    for weights_extra in ("all_weights.pt", "manifest.json"):
+        path = src_ckpt / "weights" / weights_extra
+        if path.exists():
+            shutil.copy2(path, weights_dst / weights_extra)
+
+    for doc in ("TEAMMATE_SETUP.md",):
+        readme = repo_root / doc
+        if readme.exists():
+            shutil.copy2(readme, staging / doc)
 
     output_zip.parent.mkdir(parents=True, exist_ok=True)
     if output_zip.exists():
