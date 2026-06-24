@@ -57,7 +57,7 @@
       "loss_key": "weighted_ce",
       "modality": "both",
       "num_params": 141379,
-      "checkpoint": "checkpoints\\K0.pt",
+      "checkpoint": "K0.pt",
       "macro_f1": 0.9141198979229795,
       "p_success": 0.9169499206888738
     },
@@ -118,7 +118,7 @@
       "loss_key": "focal",
       "modality": "both",
       "num_params": 354827,
-      "checkpoint": "checkpoints\\K1.pt",
+      "checkpoint": "K1.pt",
       "macro_f1": 0.9265724979492346,
       "p_success": 0.9341717652390664
     },
@@ -203,7 +203,7 @@
       "loss_key": "weighted_ce",
       "modality": "both",
       "num_params": 141637,
-      "checkpoint": "checkpoints\\K2.pt",
+      "checkpoint": "K2.pt",
       "macro_f1": 0.8419634781586083,
       "p_success": 0.8420575572173125
     },
@@ -288,7 +288,7 @@
       "loss_key": "focal",
       "modality": "both",
       "num_params": 1218173,
-      "checkpoint": "checkpoints\\K3.pt",
+      "checkpoint": "K3.pt",
       "macro_f1": 0.9362981940989548,
       "p_success": 0.9389304328121459
     },
@@ -330,7 +330,7 @@
       "loss_key": "weighted_ce",
       "modality": "mic",
       "num_params": 37858,
-      "checkpoint": "checkpoints\\K4.pt",
+      "checkpoint": "K4.pt",
       "macro_f1": 0.9488286164512388,
       "p_success": 0.94903988183161
     },
@@ -373,7 +373,7 @@
       "loss_key": "focal",
       "modality": "mic",
       "num_params": 37858,
-      "checkpoint": "checkpoints\\K5.pt",
+      "checkpoint": "K5.pt",
       "macro_f1": 0.8547492157965809,
       "p_success": 0.8553203040173725
     },
@@ -416,7 +416,7 @@
       "loss_key": "weighted_ce",
       "modality": "both",
       "num_params": 141250,
-      "checkpoint": "checkpoints\\K6.pt",
+      "checkpoint": "K6.pt",
       "macro_f1": 0.8797406218823152,
       "p_success": 0.8797502714440825
     },
@@ -476,7 +476,7 @@
       "loss_key": "weighted_ce",
       "modality": "both",
       "num_params": 4500869,
-      "checkpoint": "checkpoints\\Kdet.pt",
+      "checkpoint": "Kdet.pt",
       "macro_f1": 0.9375320985544662,
       "p_success": 0.9401767505098573
     }

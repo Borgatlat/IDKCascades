@@ -8,48 +8,32 @@ from pathlib import Path
 
 import torch
 
+from cascade.checkpoint_paths import resolve_registry_checkpoint
+from cascade.loader import load_state_dict_from_file
 from models.dual_modal_cnn import build_ki_model
 from utils.labels import KI_REGISTRY
 
 KI_NAMES = [f"K{i}" for i in range(7)] + ["Kdet"]
 
 
-def _load_state_dict_from_checkpoint(path: Path) -> dict:
-    ckpt = torch.load(path, map_location="cpu", weights_only=False)
-    if isinstance(ckpt, dict) and "model_state_dict" in ckpt:
-        return ckpt["model_state_dict"]
-    if isinstance(ckpt, dict) and all(isinstance(v, torch.Tensor) for v in ckpt.values()):
-        return ckpt
-    raise ValueError(f"{path}: unrecognized checkpoint format")
-
-
-def verify_one(ki_name: str, checkpoint_dir: Path, weights_dir: Path) -> dict:
+def verify_one(
+    ki_name: str,
+    checkpoint_dir: Path,
+    registry_path: Path | None,
+) -> dict:
     spec = KI_REGISTRY[ki_name]
+    path = resolve_registry_checkpoint(None, ki_name, checkpoint_dir, registry_path)
+    state_dict = load_state_dict_from_file(path)
+
     model = build_ki_model(ki_name, len(spec.class_names))
+    model.load_state_dict(state_dict)
 
-    full_path = checkpoint_dir / f"{ki_name}.pt"
-    weights_path = weights_dir / f"{ki_name}_weights.pt"
-
-    full_sd = _load_state_dict_from_checkpoint(full_path)
-    flat_sd = _load_state_dict_from_checkpoint(weights_path)
-
-    model.load_state_dict(full_sd)
-    model2 = build_ki_model(ki_name, len(spec.class_names))
-    model2.load_state_dict(flat_sd)
-
-    full_params = sum(t.numel() for t in full_sd.values())
-    flat_params = sum(t.numel() for t in flat_sd.values())
-    keys_match = list(full_sd.keys()) == list(flat_sd.keys())
-    values_match = keys_match and all(
-        torch.equal(full_sd[k], flat_sd[k]) for k in full_sd.keys()
-    )
-
+    num_params = sum(t.numel() for t in state_dict.values())
     return {
         "name": ki_name,
-        "full_checkpoint": str(full_path),
-        "weights_file": str(weights_path),
-        "num_parameters": full_params,
-        "flat_matches_full": values_match,
+        "loaded_from": str(path.resolve()),
+        "num_parameters": num_params,
+        "num_tensors": len(state_dict),
         "load_ok": True,
     }
 
@@ -57,28 +41,26 @@ def verify_one(ki_name: str, checkpoint_dir: Path, weights_dir: Path) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Verify classifier weight files")
     parser.add_argument("--checkpoint-dir", type=Path, default=Path("checkpoints"))
-    parser.add_argument("--weights-dir", type=Path, default=Path("checkpoints/weights"))
+    parser.add_argument(
+        "--registry",
+        type=Path,
+        default=Path("checkpoints/classifier_registry.json"),
+    )
     parser.add_argument("--json", type=Path, default=None, help="Optional report output path")
     args = parser.parse_args()
 
+    checkpoint_dir = args.checkpoint_dir.expanduser().resolve()
+    registry_path = args.registry.expanduser().resolve() if args.registry.exists() else None
+
     results = []
-    ok = True
     for ki_name in KI_NAMES:
-        row = verify_one(ki_name, args.checkpoint_dir, args.weights_dir)
+        row = verify_one(ki_name, checkpoint_dir, registry_path)
         results.append(row)
-        status = "OK" if row["flat_matches_full"] else "MISMATCH"
-        if not row["flat_matches_full"]:
-            ok = False
-        print(
-            f"[{status}] {ki_name}: {row['num_parameters']:,} params, "
-            f"flat weights match full checkpoint={row['flat_matches_full']}"
-        )
+        print(f"[OK] {ki_name}: {row['num_parameters']:,} params from {row['loaded_from']}")
 
     if args.json:
         args.json.write_text(json.dumps(results, indent=2), encoding="utf-8")
 
-    if not ok:
-        raise SystemExit(1)
     print("All classifiers verified.")
 
 

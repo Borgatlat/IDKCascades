@@ -161,6 +161,9 @@ def record_from_train_result(
 ) -> ClassifierRecord:
     cm = best_metrics.get("confusion_matrix", [])
     p_correct = best_metrics.get("accuracy", p_correct_from_confusion(cm))
+    ckpt_ref = None
+    if checkpoint:
+        ckpt_ref = Path(str(checkpoint).replace("\\", "/")).name
 
     return ClassifierRecord(
         name=ki_name,
@@ -176,7 +179,7 @@ def record_from_train_result(
         loss_key=loss_key,
         modality=spec.modality,
         num_params=num_params,
-        checkpoint=checkpoint,
+        checkpoint=ckpt_ref,
         macro_f1=macro_f1,
     )
 

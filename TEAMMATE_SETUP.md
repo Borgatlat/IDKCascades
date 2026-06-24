@@ -88,6 +88,23 @@ You should see `[OK]` for K0–K6 and Kdet.
 
 Research figures (confusion matrices, registry table) are in `checkpoints/figures/` on GitHub.
 
+## If you get "file not found" or "missing weights"
+
+1. Unzip so files land in **`your-repo/checkpoints/`** (not the repo root alone).
+2. You should see `K0.pt` … `K6.pt`, `Kdet.pt` **inside** `checkpoints/`.
+3. Both `.pt` and `.pth` extensions work (they are identical copies).
+4. From repo root, run:
+   ```bash
+   python verify_classifiers.py
+   python repack_checkpoints.py   # only if files were moved or corrupted
+   ```
+5. Load using **absolute** checkpoint dir (avoids working-directory bugs):
+   ```python
+   from pathlib import Path
+   ROOT = Path(__file__).resolve().parent  # or your repo root
+   load_cascade_models(ROOT / "checkpoints", ROOT / "checkpoints" / "classifier_registry.json")
+   ```
+
 ## Notes
 
 - Preprocessed **dataset** is not included (too large). Ask for dataset access separately if you need retraining.
