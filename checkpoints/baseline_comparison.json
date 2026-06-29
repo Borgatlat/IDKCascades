@@ -1,0 +1,121 @@
+{
+  "hardware": {
+    "device": "cpu",
+    "cuda_available": false,
+    "platform": "Windows-11-10.0.26200-SP0",
+    "is_jetson": false,
+    "jetson_model": null,
+    "note": "CPU-only; run profile_jetson.py on NVIDIA Jetson for paper WCET."
+  },
+  "kdet_mode": "registry",
+  "kdet_description": "simulated Kdet via validation CM (94.0% val accuracy, reproducible per sample)",
+  "timing_mode": "table",
+  "n_val": 8826,
+  "baselines": [
+    {
+      "name": "expand",
+      "initial_cascade": [
+        "K0",
+        "K2",
+        "K3",
+        "K1",
+        "Kdet"
+      ],
+      "summary": {
+        "n": 8826,
+        "accuracy": 0.9562655789712214,
+        "kdet_rate": 0.11783367323815998,
+        "deadline_override_rate": 0.0,
+        "latency_ms": {
+          "mean": 1311.6961123981625,
+          "p50": 139.30950011126697,
+          "p95": 10158.522300189361,
+          "max": 10193.115200148895
+        },
+        "ki_fire_counts": {
+          "K0": 8826,
+          "K1": 769,
+          "K2": 4644,
+          "K3": 3057,
+          "K4": 3137,
+          "K6": 2137,
+          "Kdet": 1040
+        },
+        "branch_counts": {
+          "K0:background": 994,
+          "K0:suv": 3137,
+          "K0:coupe": 2120,
+          "K1:coupe": 17,
+          "K1:background": 1
+        }
+      }
+    },
+    {
+      "name": "linear_k0_k3",
+      "initial_cascade": [
+        "K0",
+        "K1",
+        "K2",
+        "K3",
+        "Kdet"
+      ],
+      "summary": {
+        "n": 8826,
+        "accuracy": 0.9560389757534556,
+        "kdet_rate": 0.12111941989576253,
+        "deadline_override_rate": 0.0,
+        "latency_ms": {
+          "mean": 1346.756952687342,
+          "p50": 139.30950011126697,
+          "p95": 10158.522300189361,
+          "max": 10182.262300048023
+        },
+        "ki_fire_counts": {
+          "K0": 8826,
+          "K1": 2575,
+          "K2": 4513,
+          "K3": 2990,
+          "K4": 3148,
+          "K6": 2230,
+          "Kdet": 1069
+        },
+        "branch_counts": {
+          "K0:background": 994,
+          "K0:suv": 3137,
+          "K0:coupe": 2120,
+          "K1:suv": 11,
+          "K1:coupe": 110,
+          "K1:background": 10
+        }
+      }
+    },
+    {
+      "name": "always_kdet",
+      "initial_cascade": [
+        "Kdet"
+      ],
+      "summary": {
+        "n": 8826,
+        "accuracy": 0.9377974167233175,
+        "kdet_rate": 1.0,
+        "deadline_override_rate": 0.0,
+        "latency_ms": {
+          "mean": 10000.0,
+          "p50": 10000.0,
+          "p95": 10000.0,
+          "max": 10000.0
+        },
+        "ki_fire_counts": {
+          "Kdet": 8826
+        },
+        "branch_counts": {}
+      }
+    }
+  ],
+  "paper_notes": {
+    "kdet_oracle": "Use only for EXPAND probability-table profiling (not runtime eval).",
+    "kdet_registry": "Default publishable mode: ~94% Kdet accuracy from validation CM.",
+    "kdet_model": "Best: real Kdet forward pass on target hardware.",
+    "timing": "Re-run with --timing live on NVIDIA Jetson before submission."
+  }
+}

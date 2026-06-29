@@ -430,10 +430,10 @@
         "miata",
         "background"
       ],
-      "runtime_ms": 28.28079699887894,
-      "wcet_ms": 144.39010003115982,
+      "runtime_ms": 10000.0,
+      "wcet_ms": 10000.0,
       "p_idk": 0.0,
-      "p_correct": 0.9401767505098573,
+      "p_correct": 1.0,
       "confusion_matrix": [
         [
           2117,
@@ -476,9 +476,9 @@
       "loss_key": "weighted_ce",
       "modality": "both",
       "num_params": 4500869,
-      "checkpoint": "Kdet.pt",
+      "checkpoint": null,
       "macro_f1": 0.9375320985544662,
-      "p_success": 0.9401767505098573
+      "p_success": 1.0
     }
   ]
 }

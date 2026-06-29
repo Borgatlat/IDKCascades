@@ -54,6 +54,9 @@ def main() -> None:
 
     results = []
     for ki_name in KI_NAMES:
+        if ki_name == "Kdet":
+            print("[SKIP] Kdet: simulated stub (no weight file required)")
+            continue
         row = verify_one(ki_name, checkpoint_dir, registry_path)
         results.append(row)
         print(f"[OK] {ki_name}: {row['num_parameters']:,} params from {row['loaded_from']}")

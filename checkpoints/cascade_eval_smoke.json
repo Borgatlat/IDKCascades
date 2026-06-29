@@ -1,0 +1,290 @@
+{
+  "plan_path": "C:\\Users\\sborg\\IDKCascadeResearchCode\\HierarchalIDKCascades\\checkpoints\\synthesized_cascades.json",
+  "config": {
+    "timing_mode": "table",
+    "deadline_ms": 10000.0,
+    "deadline_guard": true,
+    "kdet_sleep": false
+  },
+  "summary": {
+    "n": 20,
+    "accuracy": 1.0,
+    "kdet_rate": 1.0,
+    "deadline_override_rate": 1.0,
+    "latency_ms": {
+      "mean": 10000.0,
+      "p50": 10000.0,
+      "p95": 10000.0,
+      "max": 10000.0
+    },
+    "ki_fire_counts": {
+      "Kdet": 20
+    },
+    "branch_counts": {},
+    "deadline_ms": 10000.0,
+    "deadline_feasible_rate": 1.0,
+    "deadline_miss_rate": 0.0
+  },
+  "samples": [
+    {
+      "idx": 5448,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5449,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5450,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5451,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5452,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5453,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5454,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5455,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5456,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5457,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5458,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5459,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5460,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5461,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5462,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5463,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5464,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5465,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5466,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    },
+    {
+      "idx": 5467,
+      "true_label": "gle350",
+      "prediction": "gle350",
+      "correct": true,
+      "fired_kis": [
+        "Kdet"
+      ],
+      "hit_kdet": true,
+      "deadline_override": true,
+      "latency_ms": 10000.0,
+      "branch_key": null
+    }
+  ]
+}

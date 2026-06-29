@@ -77,8 +77,11 @@ def profile_ki_wcet(
     batch_size: int = 1,
     warmup_batches: int = 10,
     timed_batches: int = 100,
+    *,
+    checkpoint_dir: Path | None = None,
+    registry_path: Path | None = None,
 ) -> dict:
-    """Load Ki and report C̄_i (average) and WCET (max) inference latency in ms."""
+    """Load Ki (with trained weights when checkpoint_dir set) and report C̄_i / WCET in ms."""
     spec = KI_REGISTRY[ki_name]
     device = get_device()
     arrays = prepare_ki_arrays(spec, processed_dir)
@@ -92,6 +95,26 @@ def profile_ki_wcet(
 
     loader = DataLoader(ds, batch_size=batch_size, shuffle=False)
     model = build_ki_model(ki_name, len(class_names)).to(device)
+
+    if checkpoint_dir is not None:
+        from cascade.loader import load_state_dict_for_ki
+        from utils.classifier_registry import ClassifierRegistry
+
+        reg_path = registry_path or Path(checkpoint_dir) / "classifier_registry.json"
+        registry = ClassifierRegistry.load(reg_path)
+        rec = registry.get(ki_name)
+        if rec is None:
+            raise ValueError(f"No registry record for {ki_name}")
+        state_dict, _ = load_state_dict_for_ki(
+            ki_name,
+            Path(checkpoint_dir),
+            registry_path=reg_path,
+            checkpoint_field=rec.checkpoint,
+            device=device,
+        )
+        model.load_state_dict(state_dict)
+
+    model.eval()
 
     timing = profile_ki_inference(
         model,

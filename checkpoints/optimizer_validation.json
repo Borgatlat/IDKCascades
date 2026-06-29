@@ -1,0 +1,234 @@
+{
+  "validation_passed": true,
+  "checks": {
+    "tables_has_all_initial_columns": true,
+    "tables_initial_rows_non_empty": true,
+    "tables_sample_count_at_least_1000": true,
+    "cascades_all_end_with_kdet": true,
+    "cascades_no_kdet_first": true,
+    "cascades_initial_kdet_last_only": true,
+    "cascades_specialized_use_hierarchy": true
+  },
+  "probability_tables": {
+    "path": "C:\\Users\\sborg\\IDKCascadeResearchCode\\HierarchalIDKCascades\\checkpoints\\probability_tables.json",
+    "initial_columns": [
+      "K0",
+      "K1",
+      "K2",
+      "K3"
+    ],
+    "initial_row_count": 90,
+    "initial_total_samples": 8826,
+    "specialized_branches": {
+      "suv": {
+        "columns": [
+          "K4",
+          "K2",
+          "K3",
+          "K1",
+          "K0"
+        ],
+        "row_count": 77,
+        "total_samples": 4062
+      },
+      "coupe": {
+        "columns": [
+          "K5",
+          "K6",
+          "K2",
+          "K3",
+          "K1",
+          "K0"
+        ],
+        "row_count": 121,
+        "total_samples": 3684
+      },
+      "background": {
+        "columns": [
+          "K2",
+          "K3",
+          "K1",
+          "K0"
+        ],
+        "row_count": 17,
+        "total_samples": 1080
+      }
+    },
+    "wcet_ms_keys": [
+      "K0",
+      "K1",
+      "K2",
+      "K3",
+      "K4",
+      "K5",
+      "K6",
+      "Kdet"
+    ],
+    "kdet_config": {
+      "simulated": true,
+      "wcet_ms": 10000.0,
+      "p_idk": 0.0,
+      "p_correct": 1.0,
+      "note": "Bulk profiling uses sleep=False; runtime cascade uses sleep=True"
+    },
+    "checks": {
+      "has_all_initial_columns": true,
+      "initial_rows_non_empty": true,
+      "sample_count_at_least_1000": true
+    }
+  },
+  "synthesized_cascades": {
+    "path": "C:\\Users\\sborg\\IDKCascadeResearchCode\\HierarchalIDKCascades\\checkpoints\\synthesized_cascades.json",
+    "expand_cost_ms": 1194.7002304019916,
+    "initial_cascade": [
+      "K0",
+      "K2",
+      "K3",
+      "K1",
+      "Kdet"
+    ],
+    "specialized_cascades": {
+      "K1:suv": [
+        "K4",
+        "Kdet"
+      ],
+      "K1:coupe": [
+        "K6",
+        "Kdet"
+      ],
+      "K1:background": [
+        "Kdet"
+      ],
+      "K0:suv": [
+        "K4",
+        "K2",
+        "K3",
+        "Kdet"
+      ],
+      "K0:coupe": [
+        "K6",
+        "K2",
+        "K3",
+        "Kdet"
+      ],
+      "K0:background": [
+        "K2",
+        "K3",
+        "Kdet"
+      ]
+    },
+    "per_chain": {
+      "initial": {
+        "sequence": [
+          "K0",
+          "K2",
+          "K3",
+          "K1",
+          "Kdet"
+        ],
+        "length": 5,
+        "ends_with_kdet": true,
+        "kdet_not_first": true,
+        "kdet_count": 1
+      },
+      "K1:suv": {
+        "sequence": [
+          "K4",
+          "Kdet"
+        ],
+        "length": 2,
+        "ends_with_kdet": true,
+        "kdet_not_first": true,
+        "kdet_count": 1
+      },
+      "K1:coupe": {
+        "sequence": [
+          "K6",
+          "Kdet"
+        ],
+        "length": 2,
+        "ends_with_kdet": true,
+        "kdet_not_first": true,
+        "kdet_count": 1
+      },
+      "K1:background": {
+        "sequence": [
+          "Kdet"
+        ],
+        "length": 1,
+        "ends_with_kdet": true,
+        "kdet_not_first": true,
+        "kdet_count": 1
+      },
+      "K0:suv": {
+        "sequence": [
+          "K4",
+          "K2",
+          "K3",
+          "Kdet"
+        ],
+        "length": 4,
+        "ends_with_kdet": true,
+        "kdet_not_first": true,
+        "kdet_count": 1
+      },
+      "K0:coupe": {
+        "sequence": [
+          "K6",
+          "K2",
+          "K3",
+          "Kdet"
+        ],
+        "length": 4,
+        "ends_with_kdet": true,
+        "kdet_not_first": true,
+        "kdet_count": 1
+      },
+      "K0:background": {
+        "sequence": [
+          "K2",
+          "K3",
+          "Kdet"
+        ],
+        "length": 3,
+        "ends_with_kdet": true,
+        "kdet_not_first": true,
+        "kdet_count": 1
+      }
+    },
+    "checks": {
+      "all_end_with_kdet": true,
+      "no_kdet_first": true,
+      "initial_kdet_last_only": true,
+      "specialized_use_hierarchy": true
+    }
+  },
+  "old_vs_new": {
+    "old_kdet": {
+      "wcet_ms": 144.39,
+      "runtime_ms": 28.28,
+      "p_correct": 0.9402,
+      "optimizer_input": "marginal p_idk / p_correct per Ki (classifier_registry.json)",
+      "problem": "Kdet looked cheap (~28\u2013144 ms) and reliable \u2192 picked too early"
+    },
+    "new_kdet": {
+      "wcet_ms": 10000.0,
+      "p_correct": 1.0,
+      "optimizer_input": "joint probability_tables.json (cross-ref on same samples)",
+      "fix": "Kdet is terminal penalty (10 s); EXPAND builds Ki chain first"
+    },
+    "wcet_ratio_kdet_vs_k2": 1144.2
+  },
+  "summary": {
+    "val_samples_profiled": 8826,
+    "joint_outcome_rows": 90,
+    "expand_expected_initial_cost_ms": 1194.7002304019916,
+    "initial_cascade": [
+      "K0",
+      "K2",
+      "K3",
+      "K1",
+      "Kdet"
+    ]
+  }
+}

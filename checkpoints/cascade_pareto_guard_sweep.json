@@ -1,0 +1,519 @@
+{
+  "plan_path": "C:\\Users\\sborg\\IDKCascadeResearchCode\\HierarchalIDKCascades\\checkpoints\\synthesized_cascades.json",
+  "expand_cost_ms": 1194.7002304019916,
+  "n_val": 200,
+  "timing_mode": "table",
+  "deadline_guard": true,
+  "deadlines_ms": [
+    2.8609000146389008,
+    16.513383345833667,
+    30.165866677028436,
+    43.818350008223206,
+    57.47083333941797,
+    71.12331667061274,
+    84.77580000180751,
+    98.42828333300227,
+    112.08076666419704,
+    125.73324999539182,
+    139.38573332658657,
+    153.03821665778133,
+    166.69069998897612,
+    1027.7998083232283,
+    1888.9089166574802,
+    2750.018024991732,
+    3611.1271333259842,
+    4472.236241660236,
+    5333.345349994488,
+    6194.454458328741,
+    7055.563566662992,
+    7916.672674997244,
+    8777.781783331497,
+    9638.89089166575,
+    10500.0
+  ],
+  "rows": [
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 2.8609000146389008,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 16.513383345833667,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 30.165866677028436,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 43.818350008223206,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 57.47083333941797,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 71.12331667061274,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 84.77580000180751,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 98.42828333300227,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 112.08076666419704,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 125.73324999539182,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 139.38573332658657,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 153.03821665778133,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 166.69069998897612,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 1027.7998083232283,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 1888.9089166574802,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 2750.018024991732,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 3611.1271333259842,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 4472.236241660236,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 5333.345349994488,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 6194.454458328741,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 7055.563566662992,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 7916.672674997244,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 8777.781783331497,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 1.0,
+      "kdet_rate": 1.0,
+      "deadline_override_rate": 1.0,
+      "latency_ms": {
+        "mean": 10000.0,
+        "p50": 10000.0,
+        "p95": 10000.0,
+        "max": 10000.0
+      },
+      "ki_fire_counts": {
+        "Kdet": 200
+      },
+      "branch_counts": {},
+      "deadline_ms": 9638.89089166575,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 200,
+      "accuracy": 0.99,
+      "kdet_rate": 0.06,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 646.4789159983047,
+        "p50": 6.286099989665672,
+        "p95": 10158.85450001224,
+        "max": 10158.85450001224
+      },
+      "ki_fire_counts": {
+        "K0": 200,
+        "K1": 12,
+        "K2": 78,
+        "K3": 59,
+        "K4": 149,
+        "Kdet": 12
+      },
+      "branch_counts": {
+        "K0:background": 1,
+        "K0:suv": 149
+      },
+      "deadline_ms": 10500.0,
+      "deadline_feasible_rate": 1.0,
+      "deadline_miss_rate": 0.0
+    }
+  ]
+}

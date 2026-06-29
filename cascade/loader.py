@@ -69,6 +69,12 @@ def load_cascade_models(
         if rec is None:
             raise ValueError(f"No registry record for {ki_name}")
 
+        # Kdet is a timing stub in the paper — no real weights to load.
+        if ki_name == "Kdet":
+            models[ki_name] = None
+            print("Kdet: runtime via cascade.kdet (registry/model); no Ki slot in cascade loader")
+            continue
+
         state_dict, used_path = load_state_dict_for_ki(
             ki_name,
             checkpoint_dir,
@@ -84,3 +90,30 @@ def load_cascade_models(
         print(f"Loaded {ki_name} from {used_path} ({sum(t.numel() for t in state_dict.values()):,} params)")
 
     return models, registry, device
+
+
+def load_kdet_model(
+    checkpoint_dir: Path,
+    registry_path: Path | None = None,
+) -> tuple[nn.Module, torch.device]:
+    """Load trained Kdet weights for model-mode evaluation."""
+    checkpoint_dir = Path(checkpoint_dir).expanduser().resolve()
+    registry_path = registry_path or checkpoint_dir / "classifier_registry.json"
+    registry = ClassifierRegistry.load(registry_path)
+    rec = registry.get("Kdet")
+    if rec is None:
+        raise ValueError("No Kdet record in classifier_registry.json")
+
+    device = get_device()
+    state_dict, used_path = load_state_dict_for_ki(
+        "Kdet",
+        checkpoint_dir,
+        registry_path=registry_path,
+        checkpoint_field=rec.checkpoint,
+        device=device,
+    )
+    model = build_ki_model("Kdet", len(rec.class_names)).to(device)
+    model.load_state_dict(state_dict)
+    model.eval()
+    print(f"Loaded Kdet from {used_path} ({sum(t.numel() for t in state_dict.values()):,} params)")
+    return model, device
