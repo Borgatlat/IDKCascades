@@ -16,6 +16,17 @@ from utils.labels import KI_REGISTRY
 KI_NAMES = [f"K{i}" for i in range(7)] + ["Kdet"]
 
 
+def get_output_dim(model: torch.nn.Module) -> int:
+    classifier = getattr(model, "classifier", None)
+    if classifier is None or not hasattr(classifier, "__getitem__"):
+        raise RuntimeError("Model does not expose a classifier sequential module")
+    last_layer = classifier[-1]
+    out_features = getattr(last_layer, "out_features", None)
+    if out_features is None:
+        raise RuntimeError("Final classifier layer does not expose out_features")
+    return int(out_features)
+
+
 def verify_one(
     ki_name: str,
     checkpoint_dir: Path,
@@ -29,12 +40,16 @@ def verify_one(
     model.load_state_dict(state_dict)
 
     num_params = sum(t.numel() for t in state_dict.values())
+    num_classes = get_output_dim(model)
+    expected_num_classes = len(spec.class_names)
     return {
         "name": ki_name,
         "loaded_from": str(path.resolve()),
         "num_parameters": num_params,
         "num_tensors": len(state_dict),
-        "load_ok": True,
+        "num_classes": num_classes,
+        "expected_num_classes": expected_num_classes,
+        "load_ok": num_classes == expected_num_classes,
     }
 
 
@@ -56,7 +71,12 @@ def main() -> None:
     for ki_name in KI_NAMES:
         row = verify_one(ki_name, checkpoint_dir, registry_path)
         results.append(row)
-        print(f"[OK] {ki_name}: {row['num_parameters']:,} params from {row['loaded_from']}")
+        status = "[OK]" if row["load_ok"] else "[WARN]"
+        print(
+            f"{status} {ki_name}: final layer = {row['num_classes']} classes "
+            f"(expected {row['expected_num_classes']}), "
+            f"{row['num_parameters']:,} params from {row['loaded_from']}"
+        )
 
     if args.json:
         args.json.write_text(json.dumps(results, indent=2), encoding="utf-8")
