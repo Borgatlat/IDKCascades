@@ -2,6 +2,8 @@
 
 ## Start here
 
+**Start here:** `docs/team_role_pick_5day.md` — **remaining work only** (skips what is already built).
+
 1. Read `docs/scene_detector_plan.md` and `docs/scene_detector_eval_protocol.md`
 2. Run tests: `python -m pytest tests/test_confidence_scene_detector.py -v`
 3. Open `utils/confidence_scene_detector.py` — your main module
@@ -18,12 +20,16 @@
 
 **Note:** If `i22` is still preprocessing, profiles may only include `h08`, `h24`, `i29` for now. Use toy bank for logic until traces arrive Day 3.
 
-## Your Day 1–2 tasks
+## Your tasks (remaining — core module already done)
 
-- [x] Skeleton: `utils/confidence_scene_detector.py`
-- [ ] Sliding window + nearest scene (use real `SceneProfileBank.from_json(...)`)
-- [ ] Hysteresis (K=3) — stub exists, add tests for flapping
-- [ ] Day 3: replay `scene_detector_confidence_traces.parquet` (Person A will add)
+- [x] `utils/confidence_scene_detector.py` (window, hysteresis, profile bank)
+- [x] Toy tests in `tests/test_confidence_scene_detector.py`
+- [ ] Smoke test with real `scene_confidence_profiles.json`
+- [ ] Offline replay on traces (Day 3, from Person A)
+- [ ] Create `profile_confidence_scene_detector.py` + Condition Detector eval
+- [ ] Figures + final `scene_detector_comparison.json`
+
+See `docs/team_role_pick_5day.md` for full Role B checklist.
 
 ## Load real profiles
 
