@@ -1,0 +1,346 @@
+{
+  "h08": {
+    "scene": "h08",
+    "raw_dir": "datasets\\h08",
+    "meta": {
+      "terrain": "Asphalt & gravel",
+      "weather": "Sunny",
+      "targets": "C,G,M,X",
+      "nodes": 6,
+      "paper_h": 2.77
+    },
+    "n_files": 48,
+    "n_empty": 0,
+    "empty_files": [],
+    "runs": [
+      "run0",
+      "run1",
+      "run2",
+      "run3",
+      "run4",
+      "run5",
+      "run6",
+      "run7"
+    ],
+    "labels": [
+      "cx30",
+      "gle350",
+      "miata",
+      "mustang"
+    ],
+    "sensors": [
+      "rs1",
+      "rs2",
+      "rs5",
+      "rs6",
+      "rs7",
+      "rs8"
+    ],
+    "n_sensors_active": 6,
+    "segments_total": 29843,
+    "hours_total": 16.58,
+    "hours_per_sensor": {
+      "rs1": 2.77,
+      "rs2": 2.77,
+      "rs5": 2.77,
+      "rs6": 2.73,
+      "rs7": 2.77,
+      "rs8": 2.77
+    },
+    "hours_min": 2.73,
+    "hours_max": 2.77,
+    "hours_mean": 2.76
+  },
+  "h24": {
+    "scene": "h24",
+    "raw_dir": "datasets\\h24\\h24",
+    "meta": {
+      "terrain": "Asphalt & gravel",
+      "weather": "Rainy",
+      "targets": "C,G,M,X",
+      "nodes": 6,
+      "paper_h": 3.43
+    },
+    "n_files": 60,
+    "n_empty": 0,
+    "empty_files": [],
+    "runs": [
+      "run0",
+      "run1",
+      "run2",
+      "run3",
+      "run4",
+      "run5",
+      "run6",
+      "run7",
+      "run8",
+      "run9"
+    ],
+    "labels": [
+      "background",
+      "cx30",
+      "gle350",
+      "miata",
+      "mustang"
+    ],
+    "sensors": [
+      "rs1",
+      "rs2",
+      "rs5",
+      "rs6",
+      "rs7",
+      "rs8"
+    ],
+    "n_sensors_active": 6,
+    "segments_total": 37014,
+    "hours_total": 20.56,
+    "hours_per_sensor": {
+      "rs1": 3.43,
+      "rs2": 3.43,
+      "rs5": 3.43,
+      "rs6": 3.43,
+      "rs7": 3.43,
+      "rs8": 3.43
+    },
+    "hours_min": 3.43,
+    "hours_max": 3.43,
+    "hours_mean": 3.43
+  },
+  "s31": {
+    "scene": "s31",
+    "raw_dir": "datasets\\s31",
+    "meta": {
+      "terrain": "Dirt & gravel",
+      "weather": "Sunny",
+      "targets": "C,G,M,X",
+      "nodes": 6,
+      "paper_h": 2.78
+    },
+    "n_files": 60,
+    "n_empty": 9,
+    "empty_files": [
+      "run1_rs5_mic.parquet",
+      "run2_rs5_mic.parquet",
+      "run3_rs5_mic.parquet",
+      "run4_rs5_mic.parquet",
+      "run5_rs5_mic.parquet",
+      "run6_rs5_mic.parquet",
+      "run7_rs5_mic.parquet",
+      "run8_rs5_mic.parquet",
+      "run9_rs5_mic.parquet"
+    ],
+    "runs": [
+      "run0",
+      "run1",
+      "run2",
+      "run3",
+      "run4",
+      "run5",
+      "run6",
+      "run7",
+      "run8",
+      "run9"
+    ],
+    "labels": [
+      "background",
+      "cx30",
+      "gle350",
+      "miata",
+      "mustang"
+    ],
+    "sensors": [
+      "rs1",
+      "rs2",
+      "rs5",
+      "rs6",
+      "rs7",
+      "rs8"
+    ],
+    "n_sensors_active": 6,
+    "segments_total": 31198,
+    "hours_total": 17.33,
+    "hours_per_sensor": {
+      "rs1": 3.45,
+      "rs2": 3.45,
+      "rs5": 0.1,
+      "rs6": 3.45,
+      "rs7": 3.45,
+      "rs8": 3.45
+    },
+    "hours_min": 0.1,
+    "hours_max": 3.45,
+    "hours_mean": 2.89
+  },
+  "a06": {
+    "scene": "a06",
+    "raw_dir": "datasets\\a06\\a06",
+    "meta": {
+      "terrain": "Asphalt",
+      "weather": "Sunny",
+      "targets": "C,G,X",
+      "nodes": 6,
+      "paper_h": 2.14
+    },
+    "n_files": 60,
+    "n_empty": 7,
+    "empty_files": [
+      "run0_rs1_mic.parquet",
+      "run1_rs1_mic.parquet",
+      "run5_rs7_mic.parquet",
+      "run6_rs7_mic.parquet",
+      "run7_rs7_mic.parquet",
+      "run8_rs7_mic.parquet",
+      "run9_rs7_mic.parquet"
+    ],
+    "runs": [
+      "run0",
+      "run1",
+      "run2",
+      "run3",
+      "run4",
+      "run5",
+      "run6",
+      "run7",
+      "run8",
+      "run9"
+    ],
+    "labels": [
+      "background",
+      "cx30",
+      "gle350",
+      "miata",
+      "mustang"
+    ],
+    "sensors": [
+      "rs1",
+      "rs2",
+      "rs5",
+      "rs6",
+      "rs7",
+      "rs8"
+    ],
+    "n_sensors_active": 6,
+    "segments_total": 32118,
+    "hours_total": 17.84,
+    "hours_per_sensor": {
+      "rs1": 2.72,
+      "rs2": 3.41,
+      "rs5": 3.41,
+      "rs6": 3.41,
+      "rs7": 1.49,
+      "rs8": 3.41
+    },
+    "hours_min": 1.49,
+    "hours_max": 3.41,
+    "hours_mean": 2.97
+  },
+  "i29": {
+    "scene": "i29",
+    "raw_dir": "datasets\\i29\\i29",
+    "meta": {
+      "terrain": "Concrete",
+      "weather": "Windy",
+      "targets": "C,G,M,X",
+      "nodes": 8,
+      "paper_h": 4.14
+    },
+    "n_files": 64,
+    "n_empty": 0,
+    "empty_files": [],
+    "runs": [
+      "run0",
+      "run1",
+      "run2",
+      "run3",
+      "run4",
+      "run5",
+      "run6",
+      "run7"
+    ],
+    "labels": [
+      "cx30",
+      "gle350",
+      "miata",
+      "mustang"
+    ],
+    "sensors": [
+      "rs1",
+      "rs10",
+      "rs2",
+      "rs3",
+      "rs5",
+      "rs6",
+      "rs7",
+      "rs8"
+    ],
+    "n_sensors_active": 8,
+    "segments_total": 58491,
+    "hours_total": 32.49,
+    "hours_per_sensor": {
+      "rs1": 4.14,
+      "rs10": 4.14,
+      "rs2": 4.14,
+      "rs3": 4.14,
+      "rs5": 4.11,
+      "rs6": 4.04,
+      "rs7": 3.67,
+      "rs8": 4.14
+    },
+    "hours_min": 3.67,
+    "hours_max": 4.14,
+    "hours_mean": 4.06
+  },
+  "i22": {
+    "scene": "i22",
+    "raw_dir": "datasets\\i22\\i22",
+    "meta": {
+      "terrain": "Concrete",
+      "weather": "Sunny",
+      "targets": "C,M,X",
+      "nodes": 8,
+      "paper_h": 3.0
+    },
+    "n_files": 48,
+    "n_empty": 0,
+    "empty_files": [],
+    "runs": [
+      "run0",
+      "run1",
+      "run2",
+      "run3",
+      "run4",
+      "run5"
+    ],
+    "labels": [
+      "cx30",
+      "gle350",
+      "mustang"
+    ],
+    "sensors": [
+      "rs1",
+      "rs10",
+      "rs2",
+      "rs3",
+      "rs5",
+      "rs6",
+      "rs7",
+      "rs8"
+    ],
+    "n_sensors_active": 8,
+    "segments_total": 43200,
+    "hours_total": 24.0,
+    "hours_per_sensor": {
+      "rs1": 3.0,
+      "rs10": 3.0,
+      "rs2": 3.0,
+      "rs3": 3.0,
+      "rs5": 3.0,
+      "rs6": 3.0,
+      "rs7": 3.0,
+      "rs8": 3.0
+    },
+    "hours_min": 3.0,
+    "hours_max": 3.0,
+    "hours_mean": 3.0
+  }
+}

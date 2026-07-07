@@ -1,0 +1,1079 @@
+{
+  "version": 1,
+  "feature_names": [
+    "K0_mean_confidence",
+    "K0_accept_rate",
+    "K1_mean_confidence",
+    "K1_accept_rate",
+    "K2_mean_confidence",
+    "K2_accept_rate",
+    "K3_mean_confidence",
+    "K3_accept_rate",
+    "K4_mean_confidence",
+    "K4_accept_rate",
+    "K5_mean_confidence",
+    "K5_accept_rate",
+    "K6_mean_confidence",
+    "K6_accept_rate"
+  ],
+  "normalization": {
+    "z_mean": [
+      0.8848989809304476,
+      0.8316666666666667,
+      0.8189970804005862,
+      0.9183333333333333,
+      0.7884499436741074,
+      0.7733333333333334,
+      0.852692624926567,
+      1.0,
+      0.9088002523171225,
+      1.0,
+      0.7800645689990012,
+      0.7407972755772688,
+      0.9045864256582757,
+      0.6795302810887082
+    ],
+    "z_std": [
+      0.04936466029650968,
+      0.08073447563188577,
+      0.050612572357236735,
+      0.04436277218068723,
+      0.07515516672126149,
+      0.10223203455321082,
+      0.09835957293126313,
+      1.0,
+      0.02799396814231886,
+      1.0,
+      0.0208742500031959,
+      0.04270651529996033,
+      0.038014469940127985,
+      0.11910024408193129
+    ]
+  },
+  "profiles": {
+    "h08": {
+      "scene_id": "h08",
+      "vector": [
+        0.8832114008814096,
+        0.8375,
+        0.8149232494831086,
+        0.9275,
+        0.7590188919380307,
+        0.7275,
+        0.8480822484195233,
+        1.0,
+        0.886569250304744,
+        1.0,
+        0.7577627843364756,
+        0.6808510638297872,
+        0.889476200684588,
+        0.6436170212765957
+      ],
+      "feature_names": [
+        "K0_mean_confidence",
+        "K0_accept_rate",
+        "K1_mean_confidence",
+        "K1_accept_rate",
+        "K2_mean_confidence",
+        "K2_accept_rate",
+        "K3_mean_confidence",
+        "K3_accept_rate",
+        "K4_mean_confidence",
+        "K4_accept_rate",
+        "K5_mean_confidence",
+        "K5_accept_rate",
+        "K6_mean_confidence",
+        "K6_accept_rate"
+      ],
+      "n_segments": 400,
+      "per_ki": {
+        "K0": {
+          "ki": "K0",
+          "n_eval": 400,
+          "threshold_hi": 0.712172031402588,
+          "registry_p_idk": 0.08701563562202583,
+          "p_idk": 0.1625,
+          "p_correct": 0.53,
+          "non_idk_accuracy": 0.5432835820895522,
+          "mean_confidence": 0.8832114008814096,
+          "mean_confidence_non_idk": 0.9383482806718172,
+          "ece": 0.3714925373134328,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.41935483870967744,
+              "count": 31
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.44642857142857145,
+              "count": 56
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.5806451612903226,
+              "count": 248
+            }
+          ]
+        },
+        "K1": {
+          "ki": "K1",
+          "n_eval": 400,
+          "threshold_hi": 0.5576232075691224,
+          "registry_p_idk": 0.03965556310899615,
+          "p_idk": 0.0725,
+          "p_correct": 0.4775,
+          "non_idk_accuracy": 0.49326145552560646,
+          "mean_confidence": 0.8149232494831086,
+          "mean_confidence_non_idk": 0.8388005144833875,
+          "ece": 0.34164420485175206,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.5,
+              "bin_hi": 0.6000000000000001,
+              "bin_center": 0.55,
+              "accuracy": 0.4117647058823529,
+              "count": 17
+            },
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.3404255319148936,
+              "count": 47
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.453125,
+              "count": 64
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.4666666666666667,
+              "count": 90
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.5816993464052288,
+              "count": 153
+            }
+          ]
+        },
+        "K2": {
+          "ki": "K2",
+          "n_eval": 400,
+          "threshold_hi": 0.6127088069915773,
+          "registry_p_idk": 0.13664174031271245,
+          "p_idk": 0.2725,
+          "p_correct": 0.245,
+          "non_idk_accuracy": 0.2611683848797251,
+          "mean_confidence": 0.7590188919380307,
+          "mean_confidence_non_idk": 0.8558241311217502,
+          "ece": 0.5860824742268042,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.18604651162790697,
+              "count": 43
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.19642857142857142,
+              "count": 56
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.3103448275862069,
+              "count": 58
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.291044776119403,
+              "count": 134
+            }
+          ]
+        },
+        "K3": {
+          "ki": "K3",
+          "n_eval": 400,
+          "threshold_hi": 5.421010862427522e-20,
+          "registry_p_idk": 0.0,
+          "p_idk": 0.0,
+          "p_correct": 0.2925,
+          "non_idk_accuracy": 0.2925,
+          "mean_confidence": 0.8480822484195233,
+          "mean_confidence_non_idk": 0.8480822484195233,
+          "ece": 0.53775,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.30000000000000004,
+              "bin_hi": 0.4,
+              "bin_center": 0.35000000000000003,
+              "accuracy": 0.25,
+              "count": 8
+            },
+            {
+              "bin_lo": 0.4,
+              "bin_hi": 0.5,
+              "bin_center": 0.45,
+              "accuracy": 0.3,
+              "count": 20
+            },
+            {
+              "bin_lo": 0.5,
+              "bin_hi": 0.6000000000000001,
+              "bin_center": 0.55,
+              "accuracy": 0.2962962962962963,
+              "count": 27
+            },
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.24242424242424243,
+              "count": 33
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.24324324324324326,
+              "count": 37
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.22,
+              "count": 50
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.3244444444444444,
+              "count": 225
+            }
+          ]
+        },
+        "K4": {
+          "ki": "K4",
+          "n_eval": 212,
+          "threshold_hi": 0.5020079612731935,
+          "registry_p_idk": 0.0007385524372230429,
+          "p_idk": 0.0,
+          "p_correct": 0.8113207547169812,
+          "non_idk_accuracy": 0.8113207547169812,
+          "mean_confidence": 0.886569250304744,
+          "mean_confidence_non_idk": 0.886569250304744,
+          "ece": 0.12358490566037734,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.5,
+              "bin_hi": 0.6000000000000001,
+              "bin_center": 0.55,
+              "accuracy": 0.875,
+              "count": 16
+            },
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.75,
+              "count": 20
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.625,
+              "count": 16
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.65,
+              "count": 20
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.8571428571428571,
+              "count": 140
+            }
+          ]
+        },
+        "K5": {
+          "ki": "K5",
+          "n_eval": 188,
+          "threshold_hi": 0.6913862228393556,
+          "registry_p_idk": 0.28773072747014117,
+          "p_idk": 0.3191489361702128,
+          "p_correct": 0.2553191489361702,
+          "non_idk_accuracy": 0.140625,
+          "mean_confidence": 0.7577627843364756,
+          "mean_confidence_non_idk": 0.8309783525764942,
+          "ece": 0.69609375,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.5,
+              "count": 4
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.2222222222222222,
+              "count": 45
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.13953488372093023,
+              "count": 43
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.0,
+              "count": 36
+            }
+          ]
+        },
+        "K6": {
+          "ki": "K6",
+          "n_eval": 188,
+          "threshold_hi": 0.9163749217987062,
+          "registry_p_idk": 0.26031487513572205,
+          "p_idk": 0.35638297872340424,
+          "p_correct": 0.17553191489361702,
+          "non_idk_accuracy": 0.05785123966942149,
+          "mean_confidence": 0.889476200684588,
+          "mean_confidence_non_idk": 0.9844860961614561,
+          "ece": 0.8921487603305784,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.05785123966942149,
+              "count": 121
+            }
+          ]
+        }
+      }
+    },
+    "h24": {
+      "scene_id": "h24",
+      "vector": [
+        0.9461842185258865,
+        0.9275,
+        0.8829210029542446,
+        0.9675,
+        0.8916121117770672,
+        0.915,
+        0.9753970104455948,
+        1.0,
+        0.9482852843499953,
+        1.0,
+        0.8079658126831055,
+        0.7771428571428571,
+        0.956822750227792,
+        0.84
+      ],
+      "feature_names": [
+        "K0_mean_confidence",
+        "K0_accept_rate",
+        "K1_mean_confidence",
+        "K1_accept_rate",
+        "K2_mean_confidence",
+        "K2_accept_rate",
+        "K3_mean_confidence",
+        "K3_accept_rate",
+        "K4_mean_confidence",
+        "K4_accept_rate",
+        "K5_mean_confidence",
+        "K5_accept_rate",
+        "K6_mean_confidence",
+        "K6_accept_rate"
+      ],
+      "n_segments": 400,
+      "per_ki": {
+        "K0": {
+          "ki": "K0",
+          "n_eval": 400,
+          "threshold_hi": 0.712172031402588,
+          "registry_p_idk": 0.08701563562202583,
+          "p_idk": 0.0725,
+          "p_correct": 0.9525,
+          "non_idk_accuracy": 0.9730458221024259,
+          "mean_confidence": 0.9461842185258865,
+          "mean_confidence_non_idk": 0.9727062680971912,
+          "ece": 0.04029649595687336,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.625,
+              "count": 8
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.8571428571428571,
+              "count": 28
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.991044776119403,
+              "count": 335
+            }
+          ]
+        },
+        "K1": {
+          "ki": "K1",
+          "n_eval": 400,
+          "threshold_hi": 0.5576232075691224,
+          "registry_p_idk": 0.03965556310899615,
+          "p_idk": 0.0325,
+          "p_correct": 0.95,
+          "non_idk_accuracy": 0.9715762273901809,
+          "mean_confidence": 0.8829210029542446,
+          "mean_confidence_non_idk": 0.8949122870923321,
+          "ece": 0.08824289405684754,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.5,
+              "bin_hi": 0.6000000000000001,
+              "bin_center": 0.55,
+              "accuracy": 0.7,
+              "count": 10
+            },
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.7777777777777778,
+              "count": 27
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 1.0,
+              "count": 34
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.9710144927536232,
+              "count": 69
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 1.0,
+              "count": 247
+            }
+          ]
+        },
+        "K2": {
+          "ki": "K2",
+          "n_eval": 400,
+          "threshold_hi": 0.6127088069915773,
+          "registry_p_idk": 0.13664174031271245,
+          "p_idk": 0.085,
+          "p_correct": 0.9225,
+          "non_idk_accuracy": 0.953551912568306,
+          "mean_confidence": 0.8916121117770672,
+          "mean_confidence_non_idk": 0.9261146562346996,
+          "ece": 0.04945355191256835,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.85,
+              "count": 20
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.8235294117647058,
+              "count": 34
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.875,
+              "count": 40
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.9889705882352942,
+              "count": 272
+            }
+          ]
+        },
+        "K3": {
+          "ki": "K3",
+          "n_eval": 400,
+          "threshold_hi": 5.421010862427522e-20,
+          "registry_p_idk": 0.0,
+          "p_idk": 0.0,
+          "p_correct": 0.9775,
+          "non_idk_accuracy": 0.9775,
+          "mean_confidence": 0.9753970104455948,
+          "mean_confidence_non_idk": 0.9753970104455948,
+          "ece": 0.041750000000000065,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.4,
+              "bin_hi": 0.5,
+              "bin_center": 0.45,
+              "accuracy": 0.5,
+              "count": 2
+            },
+            {
+              "bin_lo": 0.5,
+              "bin_hi": 0.6000000000000001,
+              "bin_center": 0.55,
+              "accuracy": 0.5,
+              "count": 2
+            },
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.75,
+              "count": 4
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.875,
+              "count": 8
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 1.0,
+              "count": 9
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.9866666666666667,
+              "count": 375
+            }
+          ]
+        },
+        "K4": {
+          "ki": "K4",
+          "n_eval": 155,
+          "threshold_hi": 0.5020079612731935,
+          "registry_p_idk": 0.0007385524372230429,
+          "p_idk": 0.0,
+          "p_correct": 0.9483870967741935,
+          "non_idk_accuracy": 0.9483870967741935,
+          "mean_confidence": 0.9482852843499953,
+          "mean_confidence_non_idk": 0.9482852843499953,
+          "ece": 0.059032258064516174,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.5,
+              "bin_hi": 0.6000000000000001,
+              "bin_center": 0.55,
+              "accuracy": 0.5,
+              "count": 2
+            },
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.8333333333333334,
+              "count": 6
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 1.0,
+              "count": 6
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.6923076923076923,
+              "count": 13
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.984375,
+              "count": 128
+            }
+          ]
+        },
+        "K5": {
+          "ki": "K5",
+          "n_eval": 175,
+          "threshold_hi": 0.6913862228393556,
+          "registry_p_idk": 0.28773072747014117,
+          "p_idk": 0.22285714285714286,
+          "p_correct": 0.9485714285714286,
+          "non_idk_accuracy": 0.9926470588235294,
+          "mean_confidence": 0.8079658126831055,
+          "mean_confidence_non_idk": 0.8698768742820796,
+          "ece": 0.12647058823529408,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 1.0,
+              "count": 3
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 1.0,
+              "count": 29
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.9787234042553191,
+              "count": 47
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 1.0,
+              "count": 57
+            }
+          ]
+        },
+        "K6": {
+          "ki": "K6",
+          "n_eval": 175,
+          "threshold_hi": 0.9163749217987062,
+          "registry_p_idk": 0.26031487513572205,
+          "p_idk": 0.16,
+          "p_correct": 0.9485714285714286,
+          "non_idk_accuracy": 0.9863945578231292,
+          "mean_confidence": 0.956822750227792,
+          "mean_confidence_non_idk": 0.9913320002101716,
+          "ece": 0.03639455782312928,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.9863945578231292,
+              "count": 147
+            }
+          ]
+        }
+      }
+    },
+    "i29": {
+      "scene_id": "i29",
+      "vector": [
+        0.8253013233840466,
+        0.73,
+        0.7591469887644052,
+        0.86,
+        0.7147188273072242,
+        0.6775,
+        0.7345986159145832,
+        1.0,
+        0.891546222296628,
+        1.0,
+        0.7744651099774226,
+        0.7643979057591623,
+        0.8674603260624472,
+        0.5549738219895288
+      ],
+      "feature_names": [
+        "K0_mean_confidence",
+        "K0_accept_rate",
+        "K1_mean_confidence",
+        "K1_accept_rate",
+        "K2_mean_confidence",
+        "K2_accept_rate",
+        "K3_mean_confidence",
+        "K3_accept_rate",
+        "K4_mean_confidence",
+        "K4_accept_rate",
+        "K5_mean_confidence",
+        "K5_accept_rate",
+        "K6_mean_confidence",
+        "K6_accept_rate"
+      ],
+      "n_segments": 400,
+      "per_ki": {
+        "K0": {
+          "ki": "K0",
+          "n_eval": 400,
+          "threshold_hi": 0.712172031402588,
+          "registry_p_idk": 0.08701563562202583,
+          "p_idk": 0.27,
+          "p_correct": 0.2325,
+          "non_idk_accuracy": 0.19863013698630136,
+          "mean_confidence": 0.8253013233840466,
+          "mean_confidence_non_idk": 0.9192857717814511,
+          "ece": 0.7061643835616438,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.2702702702702703,
+              "count": 37
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.1896551724137931,
+              "count": 58
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.18781725888324874,
+              "count": 197
+            }
+          ]
+        },
+        "K1": {
+          "ki": "K1",
+          "n_eval": 400,
+          "threshold_hi": 0.5576232075691224,
+          "registry_p_idk": 0.03965556310899615,
+          "p_idk": 0.14,
+          "p_correct": 0.13,
+          "non_idk_accuracy": 0.11918604651162791,
+          "mean_confidence": 0.7591469887644052,
+          "mean_confidence_non_idk": 0.8013211890708568,
+          "ece": 0.6799418604651164,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.5,
+              "bin_hi": 0.6000000000000001,
+              "bin_center": 0.55,
+              "accuracy": 0.24,
+              "count": 25
+            },
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.12280701754385964,
+              "count": 57
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.13157894736842105,
+              "count": 76
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.11458333333333333,
+              "count": 96
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.07777777777777778,
+              "count": 90
+            }
+          ]
+        },
+        "K2": {
+          "ki": "K2",
+          "n_eval": 400,
+          "threshold_hi": 0.6127088069915773,
+          "registry_p_idk": 0.13664174031271245,
+          "p_idk": 0.3225,
+          "p_correct": 0.11,
+          "non_idk_accuracy": 0.08856088560885608,
+          "mean_confidence": 0.7147188273072242,
+          "mean_confidence_non_idk": 0.8243273199704301,
+          "ece": 0.7330258302583026,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.16666666666666666,
+              "count": 54
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.13114754098360656,
+              "count": 61
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.046875,
+              "count": 64
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.043478260869565216,
+              "count": 92
+            }
+          ]
+        },
+        "K3": {
+          "ki": "K3",
+          "n_eval": 400,
+          "threshold_hi": 5.421010862427522e-20,
+          "registry_p_idk": 0.0,
+          "p_idk": 0.0,
+          "p_correct": 0.105,
+          "non_idk_accuracy": 0.105,
+          "mean_confidence": 0.7345986159145832,
+          "mean_confidence_non_idk": 0.7345986159145832,
+          "ece": 0.62425,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.30000000000000004,
+              "bin_hi": 0.4,
+              "bin_center": 0.35000000000000003,
+              "accuracy": 0.18181818181818182,
+              "count": 11
+            },
+            {
+              "bin_lo": 0.4,
+              "bin_hi": 0.5,
+              "bin_center": 0.45,
+              "accuracy": 0.1891891891891892,
+              "count": 37
+            },
+            {
+              "bin_lo": 0.5,
+              "bin_hi": 0.6000000000000001,
+              "bin_center": 0.55,
+              "accuracy": 0.16176470588235295,
+              "count": 68
+            },
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.08571428571428572,
+              "count": 70
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.13333333333333333,
+              "count": 45
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.06666666666666667,
+              "count": 60
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.05504587155963303,
+              "count": 109
+            }
+          ]
+        },
+        "K4": {
+          "ki": "K4",
+          "n_eval": 209,
+          "threshold_hi": 0.5020079612731935,
+          "registry_p_idk": 0.0007385524372230429,
+          "p_idk": 0.0,
+          "p_correct": 0.5358851674641149,
+          "non_idk_accuracy": 0.5358851674641149,
+          "mean_confidence": 0.891546222296628,
+          "mean_confidence_non_idk": 0.891546222296628,
+          "ece": 0.359090909090909,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.5,
+              "bin_hi": 0.6000000000000001,
+              "bin_center": 0.55,
+              "accuracy": 0.7142857142857143,
+              "count": 14
+            },
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.35294117647058826,
+              "count": 17
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.5294117647058824,
+              "count": 17
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.55,
+              "count": 20
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.5390070921985816,
+              "count": 141
+            }
+          ]
+        },
+        "K5": {
+          "ki": "K5",
+          "n_eval": 191,
+          "threshold_hi": 0.6913862228393556,
+          "registry_p_idk": 0.28773072747014117,
+          "p_idk": 0.2356020942408377,
+          "p_correct": 0.5078534031413613,
+          "non_idk_accuracy": 0.547945205479452,
+          "mean_confidence": 0.7744651099774226,
+          "mean_confidence_non_idk": 0.8214373474251734,
+          "ece": 0.2794520547945206,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.6000000000000001,
+              "bin_hi": 0.7000000000000001,
+              "bin_center": 0.6500000000000001,
+              "accuracy": 0.75,
+              "count": 4
+            },
+            {
+              "bin_lo": 0.7000000000000001,
+              "bin_hi": 0.8,
+              "bin_center": 0.75,
+              "accuracy": 0.5272727272727272,
+              "count": 55
+            },
+            {
+              "bin_lo": 0.8,
+              "bin_hi": 0.9,
+              "bin_center": 0.8500000000000001,
+              "accuracy": 0.5538461538461539,
+              "count": 65
+            },
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.5454545454545454,
+              "count": 22
+            }
+          ]
+        },
+        "K6": {
+          "ki": "K6",
+          "n_eval": 191,
+          "threshold_hi": 0.9163749217987062,
+          "registry_p_idk": 0.26031487513572205,
+          "p_idk": 0.44502617801047123,
+          "p_correct": 0.5392670157068062,
+          "non_idk_accuracy": 0.5660377358490566,
+          "mean_confidence": 0.8674603260624472,
+          "mean_confidence_non_idk": 0.9739276592461568,
+          "ece": 0.38396226415094337,
+          "reliability_bins": [
+            {
+              "bin_lo": 0.9,
+              "bin_hi": 1.0,
+              "bin_center": 0.95,
+              "accuracy": 0.5660377358490566,
+              "count": 106
+            }
+          ]
+        }
+      }
+    }
+  },
+  "skipped_scenes": [
+    {
+      "scene_id": "s31",
+      "reason": "Missing processed cache for s31 under datasets\\processed\\s31 (expected s31_metadata.parquet and paired mic/geo)."
+    },
+    {
+      "scene_id": "a06",
+      "reason": "Missing processed cache for a06 under datasets\\processed\\a06 (expected a06_metadata.parquet and paired mic/geo)."
+    },
+    {
+      "scene_id": "i22",
+      "reason": "Missing processed cache for i22 under datasets\\processed\\i22 (expected i22_metadata.parquet and paired mic/geo)."
+    }
+  ]
+}

@@ -307,6 +307,12 @@
   },
   "inference_avg_ms": null,
   "inference_wcet_ms": null,
-  "p_idk": 0.31650380021715524,
-  "threshold_hi": 0.95
+  "p_idk": 0.26031487513572205,
+  "threshold_hi": 0.9163749217987062,
+  "calibration": {
+    "required_precision": 0.95,
+    "achieved_precision": 0.9500734214390602,
+    "n_val": 3684,
+    "n_answered": 2724
+  }
 }

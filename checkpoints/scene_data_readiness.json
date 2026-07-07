@@ -1,0 +1,49 @@
+{
+  "processed_root": "C:\\Users\\sborg\\IDKCascadeResearchCode\\HierarchalIDKCascades\\datasets\\processed",
+  "scenes": [
+    {
+      "scene_id": "h08",
+      "ready": true,
+      "processed_dir": "datasets\\processed\\h08",
+      "n_segments": 29843,
+      "error": null
+    },
+    {
+      "scene_id": "h24",
+      "ready": true,
+      "processed_dir": "datasets\\processed",
+      "n_segments": 37014,
+      "error": null
+    },
+    {
+      "scene_id": "s31",
+      "ready": false,
+      "processed_dir": "datasets\\processed\\s31",
+      "n_segments": 0,
+      "error": "Missing processed cache for s31 under datasets\\processed\\s31 (expected s31_metadata.parquet and paired mic/geo)."
+    },
+    {
+      "scene_id": "a06",
+      "ready": false,
+      "processed_dir": "datasets\\processed\\a06",
+      "n_segments": 0,
+      "error": "Missing processed cache for a06 under datasets\\processed\\a06 (expected a06_metadata.parquet and paired mic/geo)."
+    },
+    {
+      "scene_id": "i29",
+      "ready": true,
+      "processed_dir": "datasets\\processed\\i29",
+      "n_segments": 52951,
+      "error": null
+    },
+    {
+      "scene_id": "i22",
+      "ready": false,
+      "processed_dir": "datasets\\processed\\i22",
+      "n_segments": 0,
+      "error": "Missing processed cache for i22 under datasets\\processed\\i22 (expected i22_metadata.parquet and paired mic/geo)."
+    }
+  ],
+  "n_ready": 3,
+  "n_total": 6
+}

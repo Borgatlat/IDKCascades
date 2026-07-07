@@ -1,0 +1,7 @@
+sensor_id,n_segments,duration_hours,n_global_classes,n_runs,global_labels,intermediate_labels,min_segments_per_class
+rs1,6169,3.4272,5,10,"background, cx30, gle350, miata, mustang","background, coupe, suv",1200
+rs2,6169,3.4272,5,10,"background, cx30, gle350, miata, mustang","background, coupe, suv",1200
+rs5,6169,3.4272,5,10,"background, cx30, gle350, miata, mustang","background, coupe, suv",1200
+rs6,6169,3.4272,5,10,"background, cx30, gle350, miata, mustang","background, coupe, suv",1200
+rs7,6169,3.4272,5,10,"background, cx30, gle350, miata, mustang","background, coupe, suv",1200
+rs8,6169,3.4272,5,10,"background, cx30, gle350, miata, mustang","background, coupe, suv",1200

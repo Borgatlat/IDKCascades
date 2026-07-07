@@ -89,8 +89,8 @@ def load_spectrogram_cache(
     meta_path = processed_dir / "h24_metadata.parquet"
 
     if norm_mic.exists() and norm_geo.exists():
-        mic = np.load(norm_mic)
-        geo = np.load(norm_geo)
+        mic = np.load(norm_mic, mmap_mode="r")
+        geo = np.load(norm_geo, mmap_mode="r")
     else:
         mic = normalize_spectrograms(np.load(processed_dir / "h24_paired_mic.npy"))
         geo = normalize_spectrograms(np.load(processed_dir / "h24_paired_geo.npy"))
@@ -396,11 +396,13 @@ def train_ki(
     profile_inference: bool = False,
     use_torch_compile: bool = True,
     threshold_hi: float | None = None,
+    calibrate_threshold: bool = True,
     registry: ClassifierRegistry | None = None,
     resume_from_checkpoint: bool = False,
 ) -> TrainResult:
 
 
+    user_fixed_threshold = threshold_hi is not None
     if threshold_hi is None and not is_deterministic_ki(ki_name):
         threshold_hi = threshold_hi_for_ki(ki_name)
 
@@ -555,9 +557,22 @@ def train_ki(
     if is_deterministic_ki(ki_name):
         p_idk = 0.0
         print(f"{ki_name}: deterministic fallback (p_idk=0.0, no H_i)")
+    elif calibrate_threshold and not user_fixed_threshold:
+        from training.calibration import calibrate_ki_threshold
+
+        required_precision = float(threshold_hi_for_ki(ki_name))
+        threshold_hi, p_idk, cal_meta = calibrate_ki_threshold(
+            model, val_loader, device, spec.modality, required_precision,
+        )
+        print(
+            f"{ki_name}: calibrated H_i={threshold_hi:.4f} "
+            f"(required precision {required_precision:.2f}, "
+            f"achieved {cal_meta['achieved_precision']:.4f}, "
+            f"p_idk={p_idk:.4f})"
+        )
     else:
         p_idk = compute_p_idk(model, val_loader, device, spec.modality, threshold_hi)
-        print(f"{ki_name}: p_idk={p_idk:.4f} at H_i={threshold_hi}")
+        print(f"{ki_name}: p_idk={p_idk:.4f} at fixed H_i={threshold_hi}")
 
     result = TrainResult(
         ki=ki_name,
