@@ -8,7 +8,7 @@ matrix, and DAG routing constraints (allowed_next).
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass, fields
+from dataclasses import asdict, dataclass, fields, replace
 from pathlib import Path
 
 import numpy as np
@@ -198,6 +198,14 @@ class ClassifierRegistry:
 
     def get(self, ki_name: str) -> ClassifierRecord | None:
         return self._records.get(ki_name)
+
+    def with_threshold_overrides(self, overrides: dict[str, float]) -> ClassifierRegistry:
+        """Shallow copy with per-Ki H_i overrides (does not mutate self)."""
+        reg = ClassifierRegistry()
+        for name, rec in self._records.items():
+            hi = overrides.get(name, rec.threshold_hi)
+            reg.upsert(replace(rec, threshold_hi=hi))
+        return reg
 
     def upsert(self, record: ClassifierRecord) -> None:
         self._records[record.name] = record

@@ -1,0 +1,25 @@
+{
+  "description": "Per-scene optimized IDK thresholds for M3N-VC scene detector. Produced by threshold optimizer team.",
+  "scene_ids": ["h08", "h24", "s31", "a06", "i29", "i22"],
+  "threshold_bank": {
+    "h24": {
+      "K0": 0.95,
+      "K1": 0.95,
+      "K2": 0.9,
+      "K3": 0.9,
+      "K4": 0.95,
+      "K5": 0.95,
+      "K6": 0.95
+    },
+    "i22": {
+      "K0": 0.0,
+      "K1": 0.0,
+      "K2": 0.0,
+      "K3": 0.0,
+      "K4": 0.0,
+      "K5": 0.0,
+      "K6": 0.0
+    }
+  },
+  "notes": "Replace placeholder values with optimizer output. Keys are scene_id, not sensor_id."
+}

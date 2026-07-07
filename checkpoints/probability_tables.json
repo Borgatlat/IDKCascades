@@ -1,0 +1,3491 @@
+{
+  "initial": {
+    "columns": [
+      "K0",
+      "K1",
+      "K2",
+      "K3"
+    ],
+    "total_samples": 8826,
+    "rows": [
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "IDK"
+        },
+        "count": 751,
+        "prob": 0.08508950827101745
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "gle350",
+          "K3": "gle350"
+        },
+        "count": 662,
+        "prob": 0.07500566508044414
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "gle350",
+          "K3": "gle350"
+        },
+        "count": 651,
+        "prob": 0.07375934738273283
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "coupe",
+          "K2": "miata",
+          "K3": "miata"
+        },
+        "count": 559,
+        "prob": 0.06333559936551099
+      },
+      {
+        "outcomes": {
+          "K0": "background",
+          "K1": "background",
+          "K2": "background",
+          "K3": "background"
+        },
+        "count": 545,
+        "prob": 0.06174937684115114
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "cx30",
+          "K3": "cx30"
+        },
+        "count": 502,
+        "prob": 0.05687740765918876
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "cx30",
+          "K3": "cx30"
+        },
+        "count": 460,
+        "prob": 0.05211874008610922
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "coupe",
+          "K2": "mustang",
+          "K3": "mustang"
+        },
+        "count": 401,
+        "prob": 0.0454339451620213
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "cx30"
+        },
+        "count": 302,
+        "prob": 0.034217085882619534
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "cx30"
+        },
+        "count": 298,
+        "prob": 0.03376387944708815
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "mustang"
+        },
+        "count": 293,
+        "prob": 0.03319737140267392
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "gle350"
+        },
+        "count": 268,
+        "prob": 0.030364831180602764
+      },
+      {
+        "outcomes": {
+          "K0": "background",
+          "K1": "IDK",
+          "K2": "background",
+          "K3": "background"
+        },
+        "count": 256,
+        "prob": 0.02900521187400861
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "miata"
+        },
+        "count": 255,
+        "prob": 0.028891910265125765
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "gle350"
+        },
+        "count": 242,
+        "prob": 0.027418989349648766
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "coupe",
+          "K2": "IDK",
+          "K3": "miata"
+        },
+        "count": 189,
+        "prob": 0.02141400407885792
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "mustang",
+          "K3": "mustang"
+        },
+        "count": 182,
+        "prob": 0.020620892816677998
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "miata",
+          "K3": "miata"
+        },
+        "count": 151,
+        "prob": 0.017108542941309767
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "miata"
+        },
+        "count": 144,
+        "prob": 0.016315431679129844
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "IDK"
+        },
+        "count": 136,
+        "prob": 0.015409018808067075
+      },
+      {
+        "outcomes": {
+          "K0": "background",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "background"
+        },
+        "count": 127,
+        "prob": 0.01438930432812146
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "mustang",
+          "K3": "mustang"
+        },
+        "count": 124,
+        "prob": 0.014049399501472921
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "coupe",
+          "K2": "IDK",
+          "K3": "IDK"
+        },
+        "count": 113,
+        "prob": 0.012803081803761614
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "miata",
+          "K3": "miata"
+        },
+        "count": 107,
+        "prob": 0.012123272150464536
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "IDK",
+          "K3": "cx30"
+        },
+        "count": 105,
+        "prob": 0.011896668932698844
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "gle350",
+          "K3": "gle350"
+        },
+        "count": 99,
+        "prob": 0.011216859279401768
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "background"
+        },
+        "count": 96,
+        "prob": 0.010876954452753228
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "IDK"
+        },
+        "count": 86,
+        "prob": 0.009743938363924768
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "IDK",
+          "K3": "gle350"
+        },
+        "count": 79,
+        "prob": 0.008950827101744845
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "mustang"
+        },
+        "count": 69,
+        "prob": 0.007817811012916384
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "coupe",
+          "K2": "IDK",
+          "K3": "mustang"
+        },
+        "count": 69,
+        "prob": 0.007817811012916384
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "coupe",
+          "K2": "mustang",
+          "K3": "IDK"
+        },
+        "count": 52,
+        "prob": 0.005891683661907999
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "cx30",
+          "K3": "cx30"
+        },
+        "count": 47,
+        "prob": 0.0053251756174937685
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "coupe",
+          "K2": "miata",
+          "K3": "miata"
+        },
+        "count": 30,
+        "prob": 0.003399048266485384
+      },
+      {
+        "outcomes": {
+          "K0": "background",
+          "K1": "IDK",
+          "K2": "background",
+          "K3": "IDK"
+        },
+        "count": 27,
+        "prob": 0.0030591434398368456
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "mustang",
+          "K3": "IDK"
+        },
+        "count": 26,
+        "prob": 0.0029458418309539994
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "coupe",
+          "K2": "IDK",
+          "K3": "mustang"
+        },
+        "count": 23,
+        "prob": 0.002605937004305461
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "coupe",
+          "K2": "mustang",
+          "K3": "mustang"
+        },
+        "count": 20,
+        "prob": 0.002266032177656923
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "mustang",
+          "K3": "IDK"
+        },
+        "count": 20,
+        "prob": 0.002266032177656923
+      },
+      {
+        "outcomes": {
+          "K0": "background",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "IDK"
+        },
+        "count": 19,
+        "prob": 0.0021527305687740767
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "background",
+          "K3": "background"
+        },
+        "count": 18,
+        "prob": 0.0020394289598912306
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "coupe",
+          "K2": "IDK",
+          "K3": "IDK"
+        },
+        "count": 17,
+        "prob": 0.0019261273510083844
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "miata",
+          "K3": "IDK"
+        },
+        "count": 16,
+        "prob": 0.0018128257421255382
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "coupe",
+          "K2": "IDK",
+          "K3": "miata"
+        },
+        "count": 16,
+        "prob": 0.0018128257421255382
+      },
+      {
+        "outcomes": {
+          "K0": "background",
+          "K1": "background",
+          "K2": "IDK",
+          "K3": "background"
+        },
+        "count": 13,
+        "prob": 0.0014729209154769997
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "background",
+          "K3": "IDK"
+        },
+        "count": 10,
+        "prob": 0.0011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "miata",
+          "K3": "IDK"
+        },
+        "count": 10,
+        "prob": 0.0011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "gle350",
+          "K3": "IDK"
+        },
+        "count": 9,
+        "prob": 0.0010197144799456153
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "cx30",
+          "K3": "IDK"
+        },
+        "count": 8,
+        "prob": 0.0009064128710627691
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "mustang"
+        },
+        "count": 8,
+        "prob": 0.0009064128710627691
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "miata",
+          "K3": "cx30"
+        },
+        "count": 7,
+        "prob": 0.0007931112621799229
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "gle350",
+          "K3": "IDK"
+        },
+        "count": 7,
+        "prob": 0.0007931112621799229
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "miata"
+        },
+        "count": 6,
+        "prob": 0.0006798096532970768
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "cx30",
+          "K3": "IDK"
+        },
+        "count": 6,
+        "prob": 0.0006798096532970768
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "background",
+          "K2": "IDK",
+          "K3": "background"
+        },
+        "count": 5,
+        "prob": 0.0005665080444142307
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "gle350"
+        },
+        "count": 5,
+        "prob": 0.0005665080444142307
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "coupe",
+          "K2": "miata",
+          "K3": "IDK"
+        },
+        "count": 5,
+        "prob": 0.0005665080444142307
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "gle350",
+          "K3": "cx30"
+        },
+        "count": 5,
+        "prob": 0.0005665080444142307
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "mustang",
+          "K3": "cx30"
+        },
+        "count": 4,
+        "prob": 0.00045320643553138455
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "background",
+          "K2": "background",
+          "K3": "background"
+        },
+        "count": 4,
+        "prob": 0.00045320643553138455
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "coupe",
+          "K2": "mustang",
+          "K3": "IDK"
+        },
+        "count": 4,
+        "prob": 0.00045320643553138455
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "suv",
+          "K2": "gle350",
+          "K3": "gle350"
+        },
+        "count": 4,
+        "prob": 0.00045320643553138455
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "miata",
+          "K3": "cx30"
+        },
+        "count": 4,
+        "prob": 0.00045320643553138455
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "IDK",
+          "K3": "IDK"
+        },
+        "count": 4,
+        "prob": 0.00045320643553138455
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "gle350",
+          "K3": "IDK"
+        },
+        "count": 4,
+        "prob": 0.00045320643553138455
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "suv",
+          "K2": "IDK",
+          "K3": "cx30"
+        },
+        "count": 3,
+        "prob": 0.0003399048266485384
+      },
+      {
+        "outcomes": {
+          "K0": "background",
+          "K1": "background",
+          "K2": "background",
+          "K3": "IDK"
+        },
+        "count": 3,
+        "prob": 0.0003399048266485384
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "mustang",
+          "K3": "miata"
+        },
+        "count": 3,
+        "prob": 0.0003399048266485384
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "coupe",
+          "K2": "mustang",
+          "K3": "miata"
+        },
+        "count": 3,
+        "prob": 0.0003399048266485384
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "gle350",
+          "K3": "miata"
+        },
+        "count": 2,
+        "prob": 0.00022660321776569228
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "mustang",
+          "K3": "gle350"
+        },
+        "count": 2,
+        "prob": 0.00022660321776569228
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "suv",
+          "K2": "IDK",
+          "K3": "gle350"
+        },
+        "count": 2,
+        "prob": 0.00022660321776569228
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "suv",
+          "K2": "cx30",
+          "K3": "cx30"
+        },
+        "count": 2,
+        "prob": 0.00022660321776569228
+      },
+      {
+        "outcomes": {
+          "K0": "background",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "cx30"
+        },
+        "count": 2,
+        "prob": 0.00022660321776569228
+      },
+      {
+        "outcomes": {
+          "K0": "background",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "miata"
+        },
+        "count": 2,
+        "prob": 0.00022660321776569228
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "background"
+        },
+        "count": 2,
+        "prob": 0.00022660321776569228
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "cx30",
+          "K3": "miata"
+        },
+        "count": 2,
+        "prob": 0.00022660321776569228
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "gle350",
+          "K3": "cx30"
+        },
+        "count": 2,
+        "prob": 0.00022660321776569228
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "background",
+          "K3": "mustang"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "cx30",
+          "K3": "gle350"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "cx30",
+          "K3": "miata"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "IDK",
+          "K2": "mustang",
+          "K3": "background"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "IDK",
+          "K1": "background",
+          "K2": "IDK",
+          "K3": "IDK"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "IDK",
+          "K3": "cx30"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "IDK",
+          "K2": "miata",
+          "K3": "background"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "coupe",
+          "K1": "coupe",
+          "K2": "IDK",
+          "K3": "gle350"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "IDK",
+          "K2": "cx30",
+          "K3": "gle350"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "cx30",
+          "K3": "IDK"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "cx30",
+          "K3": "gle350"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      },
+      {
+        "outcomes": {
+          "K0": "suv",
+          "K1": "suv",
+          "K2": "mustang",
+          "K3": "cx30"
+        },
+        "count": 1,
+        "prob": 0.00011330160888284614
+      }
+    ]
+  },
+  "specialized": {
+    "suv": {
+      "columns": [
+        "K4",
+        "K2",
+        "K3",
+        "K1",
+        "K0"
+      ],
+      "total_samples": 4062,
+      "rows": [
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "gle350",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 643,
+          "prob": 0.1582964057114722
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 610,
+          "prob": 0.1501723289020187
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "cx30",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 478,
+          "prob": 0.11767602166420482
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 444,
+          "prob": 0.10930576070901034
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 181,
+          "prob": 0.04455933037912359
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 173,
+          "prob": 0.04258985721319547
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 140,
+          "prob": 0.034465780403742
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 139,
+          "prob": 0.03421959625800099
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 138,
+          "prob": 0.033973412112259974
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 128,
+          "prob": 0.03151157065484983
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 128,
+          "prob": 0.03151157065484983
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 112,
+          "prob": 0.027572624322993598
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 103,
+          "prob": 0.02535696701132447
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 86,
+          "prob": 0.02117183653372723
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 78,
+          "prob": 0.019202363367799114
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K4": "cx30"
+          },
+          "count": 48,
+          "prob": 0.011816838995568686
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 47,
+          "prob": 0.011570654849827671
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "IDK",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 46,
+          "prob": 0.011324470704086657
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 41,
+          "prob": 0.010093549975381585
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 41,
+          "prob": 0.010093549975381585
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "IDK",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 33,
+          "prob": 0.00812407680945347
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 27,
+          "prob": 0.0066469719350073855
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "cx30",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 24,
+          "prob": 0.005908419497784343
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K4": "gle350"
+          },
+          "count": 19,
+          "prob": 0.004677498769079271
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "gle350",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 19,
+          "prob": 0.004677498769079271
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 15,
+          "prob": 0.003692762186115214
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 13,
+          "prob": 0.003200393894633186
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "IDK",
+            "K4": "gle350"
+          },
+          "count": 7,
+          "prob": 0.0017232890201870998
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 6,
+          "prob": 0.0014771048744460858
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K4": "cx30"
+          },
+          "count": 6,
+          "prob": 0.0014771048744460858
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 5,
+          "prob": 0.0012309207287050715
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 4,
+          "prob": 0.0009847365829640572
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "suv",
+            "K2": "gle350",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 4,
+          "prob": 0.0009847365829640572
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "IDK",
+            "K4": "cx30"
+          },
+          "count": 4,
+          "prob": 0.0009847365829640572
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "IDK",
+            "K4": "gle350"
+          },
+          "count": 4,
+          "prob": 0.0009847365829640572
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "gle350",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 4,
+          "prob": 0.0009847365829640572
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 3,
+          "prob": 0.0007385524372230429
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 3,
+          "prob": 0.0007385524372230429
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 3,
+          "prob": 0.0007385524372230429
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "suv",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 3,
+          "prob": 0.0007385524372230429
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 3,
+          "prob": 0.0007385524372230429
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 3,
+          "prob": 0.0007385524372230429
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "IDK",
+            "K4": "cx30"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "suv",
+            "K2": "IDK",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "suv",
+            "K2": "cx30",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K4": "cx30"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "gle350",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "gle350",
+            "K3": "IDK",
+            "K4": "gle350"
+          },
+          "count": 2,
+          "prob": 0.0004923682914820286
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "gle350"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "IDK",
+            "K4": "cx30"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "background",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "gle350",
+            "K4": "gle350"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K4": "gle350"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K4": "gle350"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "IDK",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "cx30",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "cx30",
+            "K4": "gle350"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "cx30",
+            "K3": "IDK",
+            "K4": "cx30"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "cx30",
+            "K3": "gle350",
+            "K4": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "gle350",
+            "K3": "cx30",
+            "K4": "gle350"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "suv",
+            "K2": "mustang",
+            "K3": "cx30",
+            "K4": "cx30"
+          },
+          "count": 1,
+          "prob": 0.0002461841457410143
+        }
+      ]
+    },
+    "coupe": {
+      "columns": [
+        "K5",
+        "K6",
+        "K2",
+        "K3",
+        "K1",
+        "K0"
+      ],
+      "total_samples": 3684,
+      "rows": [
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 301,
+          "prob": 0.08170466883821932
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 298,
+          "prob": 0.08089033659066232
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 295,
+          "prob": 0.08007600434310531
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "miata",
+            "K6": "miata"
+          },
+          "count": 250,
+          "prob": 0.06786102062975027
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 184,
+          "prob": 0.0499457111834962
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 152,
+          "prob": 0.04125950054288816
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 125,
+          "prob": 0.03393051031487514
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 125,
+          "prob": 0.03393051031487514
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 122,
+          "prob": 0.03311617806731813
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 118,
+          "prob": 0.03203040173724213
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 101,
+          "prob": 0.027415852334419108
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 97,
+          "prob": 0.026330076004343107
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 93,
+          "prob": 0.025244299674267102
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 87,
+          "prob": 0.023615635179153095
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 85,
+          "prob": 0.023072747014115092
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 84,
+          "prob": 0.02280130293159609
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 82,
+          "prob": 0.02225841476655809
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 77,
+          "prob": 0.020901194353963082
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 75,
+          "prob": 0.02035830618892508
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 66,
+          "prob": 0.017915309446254073
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 57,
+          "prob": 0.015472312703583062
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 53,
+          "prob": 0.014386536373507057
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 43,
+          "prob": 0.011672095548317047
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 39,
+          "prob": 0.010586319218241042
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 38,
+          "prob": 0.01031487513572204
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 29,
+          "prob": 0.007871878393051032
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 27,
+          "prob": 0.007328990228013029
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 27,
+          "prob": 0.007328990228013029
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 25,
+          "prob": 0.0067861020629750276
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 25,
+          "prob": 0.0067861020629750276
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 24,
+          "prob": 0.006514657980456026
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 23,
+          "prob": 0.006243213897937025
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 23,
+          "prob": 0.006243213897937025
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 22,
+          "prob": 0.005971769815418024
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 19,
+          "prob": 0.00515743756786102
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "miata",
+            "K6": "miata"
+          },
+          "count": 19,
+          "prob": 0.00515743756786102
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 19,
+          "prob": 0.00515743756786102
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 17,
+          "prob": 0.004614549402823019
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 15,
+          "prob": 0.004071661237785016
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 14,
+          "prob": 0.003800217155266015
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 14,
+          "prob": 0.003800217155266015
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 13,
+          "prob": 0.003528773072747014
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 12,
+          "prob": 0.003257328990228013
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 11,
+          "prob": 0.002985884907709012
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 10,
+          "prob": 0.0027144408251900108
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 10,
+          "prob": 0.0027144408251900108
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 10,
+          "prob": 0.0027144408251900108
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 9,
+          "prob": 0.0024429967426710096
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 9,
+          "prob": 0.0024429967426710096
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 8,
+          "prob": 0.002171552660152009
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 7,
+          "prob": 0.0019001085776330076
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "miata",
+            "K6": "miata"
+          },
+          "count": 7,
+          "prob": 0.0019001085776330076
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 7,
+          "prob": 0.0019001085776330076
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 7,
+          "prob": 0.0019001085776330076
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 7,
+          "prob": 0.0019001085776330076
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 7,
+          "prob": 0.0019001085776330076
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 6,
+          "prob": 0.0016286644951140066
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "miata",
+            "K6": "miata"
+          },
+          "count": 6,
+          "prob": 0.0016286644951140066
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "miata",
+            "K6": "miata"
+          },
+          "count": 6,
+          "prob": 0.0016286644951140066
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 6,
+          "prob": 0.0016286644951140066
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 6,
+          "prob": 0.0016286644951140066
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 6,
+          "prob": 0.0016286644951140066
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 5,
+          "prob": 0.0013572204125950054
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 5,
+          "prob": 0.0013572204125950054
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 5,
+          "prob": 0.0013572204125950054
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 5,
+          "prob": 0.0013572204125950054
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 5,
+          "prob": 0.0013572204125950054
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 5,
+          "prob": 0.0013572204125950054
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 4,
+          "prob": 0.0010857763300760044
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 4,
+          "prob": 0.0010857763300760044
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 4,
+          "prob": 0.0010857763300760044
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 3,
+          "prob": 0.0008143322475570033
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 3,
+          "prob": 0.0008143322475570033
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 3,
+          "prob": 0.0008143322475570033
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 3,
+          "prob": 0.0008143322475570033
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 3,
+          "prob": 0.0008143322475570033
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 3,
+          "prob": 0.0008143322475570033
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 3,
+          "prob": 0.0008143322475570033
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "miata",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 3,
+          "prob": 0.0008143322475570033
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "miata",
+            "K6": "miata"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "miata",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 2,
+          "prob": 0.0005428881650380022
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "cx30",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "gle350",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "background",
+            "K2": "IDK",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "miata",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "coupe",
+            "K2": "miata",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "miata",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "miata",
+            "K3": "background",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "IDK",
+            "K5": "mustang",
+            "K6": "mustang"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "IDK",
+            "K3": "mustang",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "coupe",
+            "K1": "coupe",
+            "K2": "mustang",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "miata",
+            "K5": "IDK",
+            "K6": "IDK"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "IDK",
+            "K5": "IDK",
+            "K6": "miata"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "cx30",
+            "K3": "cx30",
+            "K5": "IDK",
+            "K6": "mustang"
+          },
+          "count": 1,
+          "prob": 0.0002714440825190011
+        }
+      ]
+    },
+    "background": {
+      "columns": [
+        "K2",
+        "K3",
+        "K1",
+        "K0"
+      ],
+      "total_samples": 1080,
+      "rows": [
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "background",
+            "K2": "background",
+            "K3": "background"
+          },
+          "count": 545,
+          "prob": 0.5046296296296297
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "background"
+          },
+          "count": 246,
+          "prob": 0.22777777777777777
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "background"
+          },
+          "count": 119,
+          "prob": 0.11018518518518519
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "background"
+          },
+          "count": 61,
+          "prob": 0.05648148148148148
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK"
+          },
+          "count": 39,
+          "prob": 0.03611111111111111
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "IDK"
+          },
+          "count": 19,
+          "prob": 0.017592592592592594
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "background",
+            "K2": "IDK",
+            "K3": "background"
+          },
+          "count": 13,
+          "prob": 0.012037037037037037
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "background"
+          },
+          "count": 11,
+          "prob": 0.010185185185185186
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK"
+          },
+          "count": 10,
+          "prob": 0.009259259259259259
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "background",
+            "K2": "IDK",
+            "K3": "background"
+          },
+          "count": 4,
+          "prob": 0.003703703703703704
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "background",
+            "K2": "background",
+            "K3": "background"
+          },
+          "count": 4,
+          "prob": 0.003703703703703704
+        },
+        {
+          "outcomes": {
+            "K0": "background",
+            "K1": "background",
+            "K2": "background",
+            "K3": "IDK"
+          },
+          "count": 3,
+          "prob": 0.002777777777777778
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "background",
+            "K3": "IDK"
+          },
+          "count": 2,
+          "prob": 0.001851851851851852
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "IDK"
+          },
+          "count": 1,
+          "prob": 0.000925925925925926
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "IDK",
+            "K2": "mustang",
+            "K3": "background"
+          },
+          "count": 1,
+          "prob": 0.000925925925925926
+        },
+        {
+          "outcomes": {
+            "K0": "IDK",
+            "K1": "background",
+            "K2": "IDK",
+            "K3": "IDK"
+          },
+          "count": 1,
+          "prob": 0.000925925925925926
+        },
+        {
+          "outcomes": {
+            "K0": "suv",
+            "K1": "IDK",
+            "K2": "IDK",
+            "K3": "IDK"
+          },
+          "count": 1,
+          "prob": 0.000925925925925926
+        }
+      ]
+    }
+  },
+  "wcet_ms": {
+    "K0": 3.344600001582876,
+    "K1": 24.52199999243021,
+    "K2": 8.73840000713244,
+    "K3": 122.24950001109391,
+    "K4": 2.9414999880827963,
+    "K5": 7.83619997673668,
+    "K6": 2.8609000146389008,
+    "Kdet": 10000.0
+  },
+  "runtime_ms": {
+    "K0": 1.966572997334879,
+    "K1": 8.791406999807805,
+    "K2": 6.711494000046514,
+    "K3": 12.67557300219778,
+    "K4": 2.264197000185959,
+    "K5": 2.300529997155536,
+    "K6": 1.8817610014230013,
+    "Kdet": 10000.0
+  },
+  "threshold_hi": {
+    "K0": 0.95,
+    "K1": 0.95,
+    "K2": 0.9,
+    "K3": 0.9,
+    "K4": 0.95,
+    "K5": 0.95,
+    "K6": 0.95
+  },
+  "kdet": {
+    "simulated": true,
+    "wcet_ms": 10000.0,
+    "p_idk": 0.0,
+    "p_correct": 1.0,
+    "note": "Bulk profiling uses sleep=False; runtime cascade uses sleep=True"
+  },
+  "meta": {
+    "processed_dir": "C:\\Users\\sborg\\IDKCascadeResearchCode\\HierarchalIDKCascades\\datasets\\processed",
+    "checkpoint_dir": "C:\\Users\\sborg\\IDKCascadeResearchCode\\HierarchalIDKCascades\\checkpoints",
+    "registry": "C:\\Users\\sborg\\IDKCascadeResearchCode\\HierarchalIDKCascades\\checkpoints\\classifier_registry.json",
+    "device": "cpu",
+    "initial_columns": [
+      "K0",
+      "K1",
+      "K2",
+      "K3"
+    ],
+    "specialized_columns": {
+      "suv": [
+        "K4",
+        "K2",
+        "K3",
+        "K1",
+        "K0"
+      ],
+      "coupe": [
+        "K5",
+        "K6",
+        "K2",
+        "K3",
+        "K1",
+        "K0"
+      ],
+      "background": [
+        "K2",
+        "K3",
+        "K1",
+        "K0"
+      ]
+    }
+  }
+}

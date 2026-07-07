@@ -1,0 +1,40 @@
+{
+  "expand_cost_ms": 1194.7002304019916,
+  "initial_cascade": [
+    "K0",
+    "K2",
+    "K3",
+    "K1",
+    "Kdet"
+  ],
+  "specialized_cascades": {
+    "K1:suv": [
+      "K4",
+      "Kdet"
+    ],
+    "K1:coupe": [
+      "K6",
+      "Kdet"
+    ],
+    "K1:background": [
+      "Kdet"
+    ],
+    "K0:suv": [
+      "K4",
+      "K2",
+      "K3",
+      "Kdet"
+    ],
+    "K0:coupe": [
+      "K6",
+      "K2",
+      "K3",
+      "Kdet"
+    ],
+    "K0:background": [
+      "K2",
+      "K3",
+      "Kdet"
+    ]
+  }
+}

@@ -1,0 +1,576 @@
+{
+  "scene_proxy": "sensor_id",
+  "n_segments": 37014,
+  "n_sensors": 6,
+  "sensor_ids": [
+    "rs1",
+    "rs2",
+    "rs5",
+    "rs6",
+    "rs7",
+    "rs8"
+  ],
+  "duration_hours_total": 20.5633,
+  "load_source": "processed",
+  "raw_mic_file_count": 60,
+  "sensors": {
+    "rs1": {
+      "n_segments": 6169,
+      "duration_hours": 3.4272,
+      "run_ids": [
+        "run0",
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5",
+        "run6",
+        "run7",
+        "run8",
+        "run9"
+      ],
+      "global_labels": [
+        "background",
+        "cx30",
+        "gle350",
+        "miata",
+        "mustang"
+      ],
+      "intermediate_labels": [
+        "background",
+        "coupe",
+        "suv"
+      ],
+      "segments_per_global_label": {
+        "gle350": 1267,
+        "mustang": 1248,
+        "cx30": 1227,
+        "miata": 1227,
+        "background": 1200
+      },
+      "segments_per_run_id": {
+        "run4": 942,
+        "run6": 919,
+        "run2": 909,
+        "run0": 908,
+        "run8": 900,
+        "run1": 359,
+        "run3": 318,
+        "run7": 308,
+        "run5": 306,
+        "run9": 300
+      },
+      "min_segments_per_global_class": 1200
+    },
+    "rs2": {
+      "n_segments": 6169,
+      "duration_hours": 3.4272,
+      "run_ids": [
+        "run0",
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5",
+        "run6",
+        "run7",
+        "run8",
+        "run9"
+      ],
+      "global_labels": [
+        "background",
+        "cx30",
+        "gle350",
+        "miata",
+        "mustang"
+      ],
+      "intermediate_labels": [
+        "background",
+        "coupe",
+        "suv"
+      ],
+      "segments_per_global_label": {
+        "gle350": 1267,
+        "mustang": 1248,
+        "cx30": 1227,
+        "miata": 1227,
+        "background": 1200
+      },
+      "segments_per_run_id": {
+        "run4": 942,
+        "run6": 919,
+        "run2": 909,
+        "run0": 908,
+        "run8": 900,
+        "run1": 359,
+        "run3": 318,
+        "run7": 308,
+        "run5": 306,
+        "run9": 300
+      },
+      "min_segments_per_global_class": 1200
+    },
+    "rs5": {
+      "n_segments": 6169,
+      "duration_hours": 3.4272,
+      "run_ids": [
+        "run0",
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5",
+        "run6",
+        "run7",
+        "run8",
+        "run9"
+      ],
+      "global_labels": [
+        "background",
+        "cx30",
+        "gle350",
+        "miata",
+        "mustang"
+      ],
+      "intermediate_labels": [
+        "background",
+        "coupe",
+        "suv"
+      ],
+      "segments_per_global_label": {
+        "gle350": 1267,
+        "mustang": 1248,
+        "cx30": 1227,
+        "miata": 1227,
+        "background": 1200
+      },
+      "segments_per_run_id": {
+        "run4": 942,
+        "run6": 919,
+        "run2": 909,
+        "run0": 908,
+        "run8": 900,
+        "run1": 359,
+        "run3": 318,
+        "run7": 308,
+        "run5": 306,
+        "run9": 300
+      },
+      "min_segments_per_global_class": 1200
+    },
+    "rs6": {
+      "n_segments": 6169,
+      "duration_hours": 3.4272,
+      "run_ids": [
+        "run0",
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5",
+        "run6",
+        "run7",
+        "run8",
+        "run9"
+      ],
+      "global_labels": [
+        "background",
+        "cx30",
+        "gle350",
+        "miata",
+        "mustang"
+      ],
+      "intermediate_labels": [
+        "background",
+        "coupe",
+        "suv"
+      ],
+      "segments_per_global_label": {
+        "gle350": 1267,
+        "mustang": 1248,
+        "cx30": 1227,
+        "miata": 1227,
+        "background": 1200
+      },
+      "segments_per_run_id": {
+        "run4": 942,
+        "run6": 919,
+        "run2": 909,
+        "run0": 908,
+        "run8": 900,
+        "run1": 359,
+        "run3": 318,
+        "run7": 308,
+        "run5": 306,
+        "run9": 300
+      },
+      "min_segments_per_global_class": 1200
+    },
+    "rs7": {
+      "n_segments": 6169,
+      "duration_hours": 3.4272,
+      "run_ids": [
+        "run0",
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5",
+        "run6",
+        "run7",
+        "run8",
+        "run9"
+      ],
+      "global_labels": [
+        "background",
+        "cx30",
+        "gle350",
+        "miata",
+        "mustang"
+      ],
+      "intermediate_labels": [
+        "background",
+        "coupe",
+        "suv"
+      ],
+      "segments_per_global_label": {
+        "gle350": 1267,
+        "mustang": 1248,
+        "cx30": 1227,
+        "miata": 1227,
+        "background": 1200
+      },
+      "segments_per_run_id": {
+        "run4": 942,
+        "run6": 919,
+        "run2": 909,
+        "run0": 908,
+        "run8": 900,
+        "run1": 359,
+        "run3": 318,
+        "run7": 308,
+        "run5": 306,
+        "run9": 300
+      },
+      "min_segments_per_global_class": 1200
+    },
+    "rs8": {
+      "n_segments": 6169,
+      "duration_hours": 3.4272,
+      "run_ids": [
+        "run0",
+        "run1",
+        "run2",
+        "run3",
+        "run4",
+        "run5",
+        "run6",
+        "run7",
+        "run8",
+        "run9"
+      ],
+      "global_labels": [
+        "background",
+        "cx30",
+        "gle350",
+        "miata",
+        "mustang"
+      ],
+      "intermediate_labels": [
+        "background",
+        "coupe",
+        "suv"
+      ],
+      "segments_per_global_label": {
+        "gle350": 1267,
+        "mustang": 1248,
+        "cx30": 1227,
+        "miata": 1227,
+        "background": 1200
+      },
+      "segments_per_run_id": {
+        "run4": 942,
+        "run6": 919,
+        "run2": 909,
+        "run0": 908,
+        "run8": 900,
+        "run1": 359,
+        "run3": 318,
+        "run7": 308,
+        "run5": 306,
+        "run9": 300
+      },
+      "min_segments_per_global_class": 1200
+    }
+  },
+  "crosstab_global_label": {
+    "rs1": {
+      "background": 1200,
+      "cx30": 1227,
+      "gle350": 1267,
+      "miata": 1227,
+      "mustang": 1248
+    },
+    "rs2": {
+      "background": 1200,
+      "cx30": 1227,
+      "gle350": 1267,
+      "miata": 1227,
+      "mustang": 1248
+    },
+    "rs5": {
+      "background": 1200,
+      "cx30": 1227,
+      "gle350": 1267,
+      "miata": 1227,
+      "mustang": 1248
+    },
+    "rs6": {
+      "background": 1200,
+      "cx30": 1227,
+      "gle350": 1267,
+      "miata": 1227,
+      "mustang": 1248
+    },
+    "rs7": {
+      "background": 1200,
+      "cx30": 1227,
+      "gle350": 1267,
+      "miata": 1227,
+      "mustang": 1248
+    },
+    "rs8": {
+      "background": 1200,
+      "cx30": 1227,
+      "gle350": 1267,
+      "miata": 1227,
+      "mustang": 1248
+    }
+  },
+  "crosstab_run_id": {
+    "rs1": {
+      "run0": 908,
+      "run1": 359,
+      "run2": 909,
+      "run3": 318,
+      "run4": 942,
+      "run5": 306,
+      "run6": 919,
+      "run7": 308,
+      "run8": 900,
+      "run9": 300
+    },
+    "rs2": {
+      "run0": 908,
+      "run1": 359,
+      "run2": 909,
+      "run3": 318,
+      "run4": 942,
+      "run5": 306,
+      "run6": 919,
+      "run7": 308,
+      "run8": 900,
+      "run9": 300
+    },
+    "rs5": {
+      "run0": 908,
+      "run1": 359,
+      "run2": 909,
+      "run3": 318,
+      "run4": 942,
+      "run5": 306,
+      "run6": 919,
+      "run7": 308,
+      "run8": 900,
+      "run9": 300
+    },
+    "rs6": {
+      "run0": 908,
+      "run1": 359,
+      "run2": 909,
+      "run3": 318,
+      "run4": 942,
+      "run5": 306,
+      "run6": 919,
+      "run7": 308,
+      "run8": 900,
+      "run9": 300
+    },
+    "rs7": {
+      "run0": 908,
+      "run1": 359,
+      "run2": 909,
+      "run3": 318,
+      "run4": 942,
+      "run5": 306,
+      "run6": 919,
+      "run7": 308,
+      "run8": 900,
+      "run9": 300
+    },
+    "rs8": {
+      "run0": 908,
+      "run1": 359,
+      "run2": 909,
+      "run3": 318,
+      "run4": 942,
+      "run5": 306,
+      "run6": 919,
+      "run7": 308,
+      "run8": 900,
+      "run9": 300
+    }
+  },
+  "min_segments_per_class_per_sensor": {
+    "rs1": 1200,
+    "rs2": 1200,
+    "rs5": 1200,
+    "rs6": 1200,
+    "rs7": 1200,
+    "rs8": 1200
+  },
+  "warnings": [],
+  "split_analysis": {
+    "strategy": "leave_one_sensor_out",
+    "min_segments": 100,
+    "eligible_sensors": [
+      "rs1",
+      "rs2",
+      "rs5",
+      "rs6",
+      "rs7",
+      "rs8"
+    ],
+    "ineligible_sensors": {},
+    "recommended_split": {
+      "strategy": "leave_one_sensor_out",
+      "calibration_sensors": [
+        "rs2",
+        "rs5",
+        "rs6",
+        "rs7",
+        "rs8"
+      ],
+      "deployment_sensors": [
+        "rs1"
+      ],
+      "feasible_for_shift_experiment": true,
+      "blockers": [],
+      "deploy_score": 10800
+    },
+    "candidate_splits": [
+      {
+        "strategy": "leave_one_sensor_out",
+        "calibration_sensors": [
+          "rs2",
+          "rs5",
+          "rs6",
+          "rs7",
+          "rs8"
+        ],
+        "deployment_sensors": [
+          "rs1"
+        ],
+        "feasible_for_shift_experiment": true,
+        "blockers": [],
+        "deploy_score": 10800
+      },
+      {
+        "strategy": "leave_one_sensor_out",
+        "calibration_sensors": [
+          "rs1",
+          "rs5",
+          "rs6",
+          "rs7",
+          "rs8"
+        ],
+        "deployment_sensors": [
+          "rs2"
+        ],
+        "feasible_for_shift_experiment": true,
+        "blockers": [],
+        "deploy_score": 10800
+      },
+      {
+        "strategy": "leave_one_sensor_out",
+        "calibration_sensors": [
+          "rs1",
+          "rs2",
+          "rs6",
+          "rs7",
+          "rs8"
+        ],
+        "deployment_sensors": [
+          "rs5"
+        ],
+        "feasible_for_shift_experiment": true,
+        "blockers": [],
+        "deploy_score": 10800
+      },
+      {
+        "strategy": "leave_one_sensor_out",
+        "calibration_sensors": [
+          "rs1",
+          "rs2",
+          "rs5",
+          "rs7",
+          "rs8"
+        ],
+        "deployment_sensors": [
+          "rs6"
+        ],
+        "feasible_for_shift_experiment": true,
+        "blockers": [],
+        "deploy_score": 10800
+      },
+      {
+        "strategy": "leave_one_sensor_out",
+        "calibration_sensors": [
+          "rs1",
+          "rs2",
+          "rs5",
+          "rs6",
+          "rs8"
+        ],
+        "deployment_sensors": [
+          "rs7"
+        ],
+        "feasible_for_shift_experiment": true,
+        "blockers": [],
+        "deploy_score": 10800
+      },
+      {
+        "strategy": "leave_one_sensor_out",
+        "calibration_sensors": [
+          "rs1",
+          "rs2",
+          "rs5",
+          "rs6",
+          "rs7"
+        ],
+        "deployment_sensors": [
+          "rs8"
+        ],
+        "feasible_for_shift_experiment": true,
+        "blockers": [],
+        "deploy_score": 10800
+      }
+    ]
+  },
+  "recommended_split": {
+    "strategy": "leave_one_sensor_out",
+    "calibration_sensors": [
+      "rs2",
+      "rs5",
+      "rs6",
+      "rs7",
+      "rs8"
+    ],
+    "deployment_sensors": [
+      "rs1"
+    ],
+    "feasible_for_shift_experiment": true,
+    "blockers": [],
+    "deploy_score": 10800
+  }
+}

@@ -1,0 +1,811 @@
+{
+  "plan_path": "C:\\Users\\sborg\\IDKCascadeResearchCode\\HierarchalIDKCascades\\checkpoints\\synthesized_cascades.json",
+  "expand_cost_ms": 1194.7002304019916,
+  "n_val": 8826,
+  "timing_mode": "table",
+  "deadline_guard": false,
+  "deadlines_ms": [
+    2.8609000146389008,
+    16.513383345833667,
+    30.165866677028436,
+    43.818350008223206,
+    57.47083333941797,
+    71.12331667061274,
+    84.77580000180751,
+    98.42828333300227,
+    112.08076666419704,
+    125.73324999539182,
+    139.38573332658657,
+    153.03821665778133,
+    166.69069998897612,
+    1027.7998083232283,
+    1888.9089166574802,
+    2750.018024991732,
+    3611.1271333259842,
+    4472.236241660236,
+    5333.345349994488,
+    6194.454458328741,
+    7055.563566662992,
+    7916.672674997244,
+    8777.781783331497,
+    9638.89089166575,
+    10500.0
+  ],
+  "rows": [
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 2.8609000146389008,
+      "deadline_feasible_rate": 0.0,
+      "deadline_miss_rate": 1.0
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 16.513383345833667,
+      "deadline_feasible_rate": 0.6536369816451394,
+      "deadline_miss_rate": 0.3463630183548606
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 30.165866677028436,
+      "deadline_feasible_rate": 0.6536369816451394,
+      "deadline_miss_rate": 0.3463630183548606
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 43.818350008223206,
+      "deadline_feasible_rate": 0.6536369816451394,
+      "deadline_miss_rate": 0.3463630183548606
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 57.47083333941797,
+      "deadline_feasible_rate": 0.6536369816451394,
+      "deadline_miss_rate": 0.3463630183548606
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 71.12331667061274,
+      "deadline_feasible_rate": 0.6536369816451394,
+      "deadline_miss_rate": 0.3463630183548606
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 84.77580000180751,
+      "deadline_feasible_rate": 0.6536369816451394,
+      "deadline_miss_rate": 0.3463630183548606
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 98.42828333300227,
+      "deadline_feasible_rate": 0.6536369816451394,
+      "deadline_miss_rate": 0.3463630183548606
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 112.08076666419704,
+      "deadline_feasible_rate": 0.6536369816451394,
+      "deadline_miss_rate": 0.3463630183548606
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 125.73324999539182,
+      "deadline_feasible_rate": 0.6536369816451394,
+      "deadline_miss_rate": 0.3463630183548606
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 139.38573332658657,
+      "deadline_feasible_rate": 0.8813732154996601,
+      "deadline_miss_rate": 0.11862678450033992
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 153.03821665778133,
+      "deadline_feasible_rate": 0.8813732154996601,
+      "deadline_miss_rate": 0.11862678450033992
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 166.69069998897612,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 1027.7998083232283,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 1888.9089166574802,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 2750.018024991732,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 3611.1271333259842,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 4472.236241660236,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 5333.345349994488,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 6194.454458328741,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 7055.563566662992,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 7916.672674997244,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 8777.781783331497,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 9638.89089166575,
+      "deadline_feasible_rate": 0.88216632676184,
+      "deadline_miss_rate": 0.11783367323815996
+    },
+    {
+      "n": 8826,
+      "accuracy": 0.9685021527305687,
+      "kdet_rate": 0.11783367323815998,
+      "deadline_override_rate": 0.0,
+      "latency_ms": {
+        "mean": 1232.4967071798194,
+        "p50": 12.083000008715317,
+        "p95": 10158.85450001224,
+        "max": 10161.715400026878
+      },
+      "ki_fire_counts": {
+        "K0": 8826,
+        "K1": 769,
+        "K2": 4644,
+        "K3": 3057,
+        "K4": 3137,
+        "K6": 2137,
+        "Kdet": 1040
+      },
+      "branch_counts": {
+        "K0:background": 994,
+        "K0:suv": 3137,
+        "K0:coupe": 2120,
+        "K1:coupe": 17,
+        "K1:background": 1
+      },
+      "deadline_ms": 10500.0,
+      "deadline_feasible_rate": 1.0,
+      "deadline_miss_rate": 0.0
+    }
+  ]
+}

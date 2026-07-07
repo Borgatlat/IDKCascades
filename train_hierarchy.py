@@ -85,7 +85,7 @@ def parse_args() -> argparse.Namespace:
         "--threshold-hi",
         type=float,
         default=None,
-        help="Override H_i for all Ki; default uses paper thresholds (0.95 inter/spec, 0.90 global)",
+        help="Fixed H_i for all Ki (skips validation-set precision calibration)",
     )
     parser.add_argument(
         "--export-registry",

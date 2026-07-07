@@ -10,7 +10,7 @@
       ],
       "runtime_ms": 1.966572997334879,
       "wcet_ms": 3.344600001582876,
-      "p_idk": 0.2917516428733288,
+      "p_idk": 0.08701563562202583,
       "p_correct": 0.9169499206888738,
       "confusion_matrix": [
         [
@@ -53,7 +53,7 @@
           "Kdet"
         ]
       },
-      "threshold_hi": 0.95,
+      "threshold_hi": 0.712172031402588,
       "loss_key": "weighted_ce",
       "modality": "both",
       "num_params": 141379,
@@ -71,7 +71,7 @@
       ],
       "runtime_ms": 8.791406999807805,
       "wcet_ms": 24.52199999243021,
-      "p_idk": 0.6093360525719466,
+      "p_idk": 0.03965556310899615,
       "p_correct": 0.9341717652390664,
       "confusion_matrix": [
         [
@@ -114,7 +114,7 @@
           "Kdet"
         ]
       },
-      "threshold_hi": 0.95,
+      "threshold_hi": 0.5576232075691224,
       "loss_key": "focal",
       "modality": "both",
       "num_params": 354827,
@@ -134,7 +134,7 @@
       ],
       "runtime_ms": 6.711494000046514,
       "wcet_ms": 8.73840000713244,
-      "p_idk": 0.4251076365284387,
+      "p_idk": 0.13664174031271245,
       "p_correct": 0.8420575572173125,
       "confusion_matrix": [
         [
@@ -199,7 +199,7 @@
           "Kdet"
         ]
       },
-      "threshold_hi": 0.9,
+      "threshold_hi": 0.6127088069915773,
       "loss_key": "weighted_ce",
       "modality": "both",
       "num_params": 141637,
@@ -219,7 +219,7 @@
       ],
       "runtime_ms": 12.67557300219778,
       "wcet_ms": 122.24950001109391,
-      "p_idk": 0.1512576478585996,
+      "p_idk": 0.0,
       "p_correct": 0.9389304328121459,
       "confusion_matrix": [
         [
@@ -284,7 +284,7 @@
           "Kdet"
         ]
       },
-      "threshold_hi": 0.9,
+      "threshold_hi": 5.421010862427522e-20,
       "loss_key": "focal",
       "modality": "both",
       "num_params": 1218173,
@@ -301,7 +301,7 @@
       ],
       "runtime_ms": 2.264197000185959,
       "wcet_ms": 2.9414999880827963,
-      "p_idk": 0.2291974396848843,
+      "p_idk": 0.0007385524372230429,
       "p_correct": 0.94903988183161,
       "confusion_matrix": [
         [
@@ -326,7 +326,7 @@
           "Kdet"
         ]
       },
-      "threshold_hi": 0.95,
+      "threshold_hi": 0.5020079612731935,
       "loss_key": "weighted_ce",
       "modality": "mic",
       "num_params": 37858,
@@ -343,7 +343,7 @@
       ],
       "runtime_ms": 2.300529997155536,
       "wcet_ms": 7.83619997673668,
-      "p_idk": 0.8650922909880565,
+      "p_idk": 0.28773072747014117,
       "p_correct": 0.8553203040173725,
       "confusion_matrix": [
         [
@@ -369,7 +369,7 @@
           "Kdet"
         ]
       },
-      "threshold_hi": 0.95,
+      "threshold_hi": 0.6913862228393556,
       "loss_key": "focal",
       "modality": "mic",
       "num_params": 37858,
@@ -386,7 +386,7 @@
       ],
       "runtime_ms": 1.8817610014230013,
       "wcet_ms": 2.8609000146389008,
-      "p_idk": 0.31650380021715524,
+      "p_idk": 0.26031487513572205,
       "p_correct": 0.8797502714440825,
       "confusion_matrix": [
         [
@@ -412,7 +412,7 @@
           "Kdet"
         ]
       },
-      "threshold_hi": 0.95,
+      "threshold_hi": 0.9163749217987062,
       "loss_key": "weighted_ce",
       "modality": "both",
       "num_params": 141250,
@@ -430,10 +430,10 @@
         "miata",
         "background"
       ],
-      "runtime_ms": 28.28079699887894,
-      "wcet_ms": 144.39010003115982,
+      "runtime_ms": 10000.0,
+      "wcet_ms": 10000.0,
       "p_idk": 0.0,
-      "p_correct": 0.9401767505098573,
+      "p_correct": 1.0,
       "confusion_matrix": [
         [
           2117,
@@ -476,9 +476,9 @@
       "loss_key": "weighted_ce",
       "modality": "both",
       "num_params": 4500869,
-      "checkpoint": "Kdet.pt",
+      "checkpoint": null,
       "macro_f1": 0.9375320985544662,
-      "p_success": 0.9401767505098573
+      "p_success": 1.0
     }
   ]
 }

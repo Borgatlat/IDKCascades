@@ -2,16 +2,67 @@
 
 """Utilities for processing the original M3N-VC h24 subset."""
 
+import gc
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import pyarrow.parquet as pq
 import torch
 import torch.nn.functional as F
 
 
 DEFAULT_H24_DIR = Path("datasets/h24/h24")
 DEFAULT_OUTPUT_DIR = Path("datasets/processed")
+# M3N-VC scenes under datasets/ (each folder may nest scene_id/scene_id/).
+KNOWN_SCENES = ("h08", "h24", "s31", "a06", "i29", "i22")
+
+
+def resolve_scene_raw_dir(scene_id: str, datasets_root: Path | str = "datasets") -> Path:
+    """Return the folder containing *_mic.parquet for one M3N-VC scene."""
+    base = Path(datasets_root) / scene_id
+    if not base.exists():
+        raise FileNotFoundError(f"Scene folder not found: {base}")
+    if list(base.glob("*_mic.parquet")):
+        return base
+    nested = base / scene_id
+    if nested.exists() and list(nested.glob("*_mic.parquet")):
+        return nested
+    hits = sorted({p.parent for p in base.rglob("*_mic.parquet")})
+    if not hits:
+        raise FileNotFoundError(f"No *_mic.parquet files under {base}")
+    return hits[0]
+
+
+def _count_segments_in_file(file_path: Path, segment_seconds: float) -> int:
+    """Estimate 2 s segment count from timestamp span (no waveform read)."""
+    pf = pq.ParquetFile(file_path)
+    if pf.metadata.num_rows == 0:
+        return 0
+    t0: float | None = None
+    t1: float | None = None
+    scale = 1.0
+    for batch in pf.iter_batches(batch_size=500_000, columns=["timestamp"]):
+        col = batch.column(0)
+        if t0 is None:
+            first = col[0].as_py()
+            scale = 0.001 if first > 1e11 else 1.0
+        b0 = col[0].as_py() * scale
+        b1 = col[-1].as_py() * scale
+        t0 = b0 if t0 is None else min(t0, b0)
+        t1 = b1 if t1 is None else max(t1, b1)
+    assert t0 is not None and t1 is not None
+    return int((t1 - t0) // segment_seconds) + 1
+
+
+def _normalize_timestamps(series: pd.Series) -> pd.Series:
+    """Convert millisecond Unix timestamps to seconds when detected."""
+    if series.empty:
+        return series
+    values = series.astype("float64")
+    if values.max() > 1e11:
+        return values / 1000.0
+    return values
 
 
 def _file_metadata(file_path: Path, suffix: str) -> dict[str, str]:
@@ -27,6 +78,181 @@ def _file_metadata(file_path: Path, suffix: str) -> dict[str, str]:
     }
 
 
+def _timestamp_bounds(file_path: Path) -> tuple[float, float, float]:
+    """Return (t0, t1, scale) for a parquet timestamp column."""
+    pf = pq.ParquetFile(file_path)
+    if pf.metadata.num_rows == 0:
+        raise ValueError(f"{file_path} is empty (0 rows).")
+    t0: float | None = None
+    t1: float | None = None
+    scale = 1.0
+    for batch in pf.iter_batches(batch_size=500_000, columns=["timestamp"]):
+        col = batch.column(0)
+        if t0 is None:
+            first = col[0].as_py()
+            scale = 0.001 if first > 1e11 else 1.0
+        b0 = col[0].as_py() * scale
+        b1 = col[-1].as_py() * scale
+        t0 = b0 if t0 is None else min(t0, b0)
+        t1 = b1 if t1 is None else max(t1, b1)
+    assert t0 is not None and t1 is not None
+    return t0, t1, scale
+
+
+def _segment_waveforms_from_file(
+    file_path: Path,
+    segment_seconds: float,
+    *,
+    sample_col: str = "samples",
+    timestamp_col: str = "timestamp",
+) -> dict[int, np.ndarray]:
+    """Stream one parquet file into per-segment waveforms (low RAM)."""
+    first_ts, _, scale = _timestamp_bounds(file_path)
+    buffers: dict[int, list[float]] = {}
+
+    pf = pq.ParquetFile(file_path)
+    for batch in pf.iter_batches(batch_size=200_000, columns=[timestamp_col, sample_col]):
+        ts_values = batch.column(0).to_numpy(zero_copy_only=True)
+        samples = batch.column(1).to_numpy(zero_copy_only=True)
+        if scale != 1.0:
+            ts_values = ts_values.astype(np.float64, copy=False) * scale
+        seg_nums = ((ts_values - first_ts) // segment_seconds).astype(np.int32, copy=False)
+        for seg_num, sample in zip(seg_nums, samples, strict=False):
+            key = int(seg_num)
+            bucket = buffers.get(key)
+            if bucket is None:
+                bucket = []
+                buffers[key] = bucket
+            bucket.append(float(sample))
+
+    if not buffers:
+        raise ValueError(f"{file_path} produced no segments.")
+    return {seg: np.asarray(wave, dtype=np.float32) for seg, wave in buffers.items()}
+
+
+def _max_segment_sample_count(file_path: Path, segment_seconds: float) -> int:
+    """Return longest 2 s segment length (in samples) inside one parquet file."""
+    first_ts, _, scale = _timestamp_bounds(file_path)
+    counts: dict[int, int] = {}
+    pf = pq.ParquetFile(file_path)
+    for batch in pf.iter_batches(batch_size=200_000, columns=["timestamp", "samples"]):
+        ts_values = batch.column(0).to_numpy(zero_copy_only=True)
+        if scale != 1.0:
+            ts_values = ts_values.astype(np.float64, copy=False) * scale
+        seg_nums = ((ts_values - first_ts) // segment_seconds).astype(np.int32, copy=False)
+        for seg_num in seg_nums:
+            key = int(seg_num)
+            counts[key] = counts.get(key, 0) + 1
+    if not counts:
+        raise ValueError(f"{file_path} produced no segments.")
+    return max(counts.values())
+
+
+def _scene_target_samples(mic_files: list[Path], segment_seconds: float, n_fft: int) -> int:
+    """Use one fixed waveform length per scene so all spectrograms share shape."""
+    target = n_fft
+    for mic_path in mic_files:
+        try:
+            target = max(target, _max_segment_sample_count(mic_path, segment_seconds))
+        except ValueError:
+            continue
+    return target
+
+
+def _spectrogram_shape(target_samples: int, n_fft: int, hop_length: int) -> tuple[int, int]:
+    """Analytic STFT output shape for fixed-length segments."""
+    if target_samples < n_fft:
+        target_samples = n_fft
+    time_frames = 1 + (target_samples - n_fft) // hop_length
+    return (n_fft // 2 + 1, time_frames)
+
+
+def _waveforms_to_spectrograms_with_keys(
+    waveforms: dict[int, np.ndarray],
+    metadata: dict[str, str],
+    *,
+    n_fft: int = 256,
+    hop_length: int | None = None,
+    target_samples: int | None = None,
+) -> tuple[np.ndarray, list[dict]]:
+    """Convert streamed segment waveforms to spectrograms + metadata rows."""
+    if hop_length is None:
+        hop_length = n_fft // 2
+
+    run_id = metadata["run_id"]
+    sensor_id = metadata["sensor_id"]
+    source_file = metadata["source_file"]
+    if target_samples is None:
+        target_samples = max(len(wave) for wave in waveforms.values())
+    if target_samples < n_fft:
+        target_samples = n_fft
+
+    window = np.hanning(n_fft).astype(np.float32)
+    spectrograms: list[np.ndarray] = []
+    meta_rows: list[dict] = []
+
+    for seg_num in sorted(waveforms):
+        signal = waveforms[seg_num]
+        if signal.size < target_samples:
+            signal = np.pad(signal, (0, target_samples - signal.size))
+        else:
+            signal = signal[:target_samples]
+
+        segment_key = f"{run_id}_{sensor_id}_seg{seg_num:05d}"
+        spectrograms.append(_stft_magnitude(signal, n_fft, hop_length, window))
+        meta_rows.append(
+            {
+                "segment_key": segment_key,
+                "run_id": run_id,
+                "sensor_id": sensor_id,
+                "segment_number": seg_num,
+                "source_file": source_file,
+            }
+        )
+
+    return np.stack(spectrograms), meta_rows
+
+
+def _paired_file_to_spectrograms(
+    mic_path: Path,
+    geo_path: Path,
+    segment_seconds: float,
+    *,
+    n_fft: int = 256,
+    hop_length: int | None = None,
+    target_samples: int | None = None,
+) -> tuple[np.ndarray, np.ndarray, list[dict]]:
+    """Stream mic/geo parquet pair into aligned spectrogram batches."""
+    mic_meta = _file_metadata(mic_path, "_mic")
+    geo_meta = _file_metadata(geo_path, "_geo")
+    if mic_meta["run_id"] != geo_meta["run_id"] or mic_meta["sensor_id"] != geo_meta["sensor_id"]:
+        raise ValueError(f"Mic/geo metadata mismatch: {mic_path.name} vs {geo_path.name}")
+
+    mic_waves = _segment_waveforms_from_file(mic_path, segment_seconds)
+    geo_waves = _segment_waveforms_from_file(geo_path, segment_seconds)
+    shared_segments = sorted(set(mic_waves) & set(geo_waves))
+    if not shared_segments:
+        raise ValueError(f"Mic/geo segment mismatch in {mic_path.name}")
+
+    dropped = (set(mic_waves) | set(geo_waves)) - set(shared_segments)
+    if dropped:
+        print(
+            f"  [warn] {mic_path.name}: {len(shared_segments)} shared segments, "
+            f"dropped {len(dropped)} unmatched"
+        )
+
+    mic_waves = {seg: mic_waves[seg] for seg in shared_segments}
+    geo_waves = {seg: geo_waves[seg] for seg in shared_segments}
+
+    mic_specs, meta_rows = _waveforms_to_spectrograms_with_keys(
+        mic_waves, mic_meta, n_fft=n_fft, hop_length=hop_length, target_samples=target_samples
+    )
+    geo_specs, _ = _waveforms_to_spectrograms_with_keys(
+        geo_waves, geo_meta, n_fft=n_fft, hop_length=hop_length, target_samples=target_samples
+    )
+    return mic_specs, geo_specs, meta_rows
+
+
 def _read_and_segment_file(
     file_path: Path,
     suffix: str,
@@ -34,9 +260,13 @@ def _read_and_segment_file(
     timestamp_col: str,
 ) -> pd.DataFrame:
     df = pd.read_parquet(file_path).copy()
+    if df.empty:
+        raise ValueError(f"{file_path} is empty (0 rows).")
 
     if timestamp_col not in df.columns:
         raise ValueError(f"{file_path} does not contain a '{timestamp_col}' column.")
+
+    df[timestamp_col] = _normalize_timestamps(df[timestamp_col])
 
     metadata = _file_metadata(file_path, suffix)
     for column, value in metadata.items():
@@ -83,20 +313,26 @@ def load_h24_two_second_segments(
     if not geo_files:
         raise FileNotFoundError(f"No *_geo.parquet files found in {data_dir}.")
 
-    mic_segments = pd.concat(
-        [
-            _read_and_segment_file(fp, "_mic", segment_seconds, timestamp_col)
-            for fp in mic_files
-        ],
-        ignore_index=True,
-    )
-    geo_segments = pd.concat(
-        [
-            _read_and_segment_file(fp, "_geo", segment_seconds, timestamp_col)
-            for fp in geo_files
-        ],
-        ignore_index=True,
-    )
+    mic_frames: list[pd.DataFrame] = []
+    for fp in mic_files:
+        try:
+            mic_frames.append(_read_and_segment_file(fp, "_mic", segment_seconds, timestamp_col))
+        except ValueError as exc:
+            print(f"  [skip] {fp.name}: {exc}")
+    if not mic_frames:
+        raise FileNotFoundError(f"No non-empty mic parquet files in {data_dir}.")
+
+    geo_frames: list[pd.DataFrame] = []
+    for fp in geo_files:
+        try:
+            geo_frames.append(_read_and_segment_file(fp, "_geo", segment_seconds, timestamp_col))
+        except ValueError as exc:
+            print(f"  [skip] {fp.name}: {exc}")
+    if not geo_frames:
+        raise FileNotFoundError(f"No non-empty geo parquet files in {data_dir}.")
+
+    mic_segments = pd.concat(mic_frames, ignore_index=True)
+    geo_segments = pd.concat(geo_frames, ignore_index=True)
 
     return mic_segments, geo_segments
 
@@ -242,12 +478,35 @@ def _resize_geo_to_mic(geo_spec: np.ndarray, mic_shape: tuple[int, int]) -> np.n
     return t.squeeze(0).squeeze(0).numpy()
 
 
+def save_scene_paired_arrays(
+    scene_id: str,
+    *,
+    datasets_root: Path | str = "datasets",
+    segment_seconds: float = 2.0,
+    n_fft: int = 256,
+    hop_length: int | None = None,
+) -> tuple[np.ndarray, np.ndarray, pd.DataFrame]:
+    """Preprocess one M3N-VC scene into paired mic/geo spectrograms + metadata."""
+    data_dir = resolve_scene_raw_dir(scene_id, datasets_root)
+    output_dir = Path(datasets_root) / "processed" / scene_id
+    prefix = scene_id
+    return save_h24_paired_arrays(
+        output_dir=output_dir,
+        data_dir=data_dir,
+        segment_seconds=segment_seconds,
+        n_fft=n_fft,
+        hop_length=hop_length,
+        array_prefix=prefix,
+    )
+
+
 def save_h24_paired_arrays(
     output_dir: str | Path = DEFAULT_OUTPUT_DIR,
     data_dir: str | Path = DEFAULT_H24_DIR,
     segment_seconds: float = 2.0,
     n_fft: int = 256,
     hop_length: int | None = None,
+    array_prefix: str = "h24",
 ) -> tuple[np.ndarray, np.ndarray, pd.DataFrame]:
     """Build aligned mic/geo spectrogram pairs and metadata for hierarchical Ki training."""
     from utils.labels import metadata_row_labels
@@ -260,9 +519,18 @@ def save_h24_paired_arrays(
     if not mic_files:
         raise FileNotFoundError(f"No *_mic.parquet files found in {data_dir}.")
 
-    mic_specs_all: list[np.ndarray] = []
-    geo_specs_all: list[np.ndarray] = []
+    if hop_length is None:
+        hop_length = n_fft // 2
+    target_samples = _scene_target_samples(mic_files, segment_seconds, n_fft)
+    spec_shape = _spectrogram_shape(target_samples, n_fft, hop_length)
+    print(f"  Scene target_samples={target_samples}, spectrogram shape={spec_shape}")
+
+    paired_mic_path = output_dir / f"{array_prefix}_paired_mic.npy"
+    paired_geo_path = output_dir / f"{array_prefix}_paired_geo.npy"
     metadata_rows: list[dict] = []
+    write_idx = 0
+    mic_mm: np.memmap | None = None
+    geo_mm: np.memmap | None = None
 
     for index, mic_path in enumerate(mic_files, start=1):
         geo_path = mic_path.with_name(mic_path.name.replace("_mic.parquet", "_geo.parquet"))
@@ -270,46 +538,84 @@ def save_h24_paired_arrays(
             raise FileNotFoundError(f"Missing paired geo file for {mic_path.name}")
 
         print(f"  [{index}/{len(mic_files)}] {mic_path.name}")
-        mic_df = _read_and_segment_file(mic_path, "_mic", segment_seconds, "timestamp")
-        geo_df = _read_and_segment_file(geo_path, "_geo", segment_seconds, "timestamp")
+        try:
+            mic_specs, geo_specs, mic_meta = _paired_file_to_spectrograms(
+                mic_path,
+                geo_path,
+                segment_seconds,
+                n_fft=n_fft,
+                hop_length=hop_length,
+                target_samples=target_samples,
+            )
+        except ValueError as exc:
+            print(f"  [skip] {exc}")
+            continue
 
-        mic_specs, mic_meta = segments_to_spectrograms_with_keys(
-            mic_df, n_fft=n_fft, hop_length=hop_length
-        )
-        geo_specs, geo_meta = segments_to_spectrograms_with_keys(
-            geo_df, n_fft=n_fft, hop_length=hop_length
-        )
+        if mic_mm is None:
+            total_segments = sum(
+                _count_segments_in_file(fp, segment_seconds) for fp in mic_files
+            )
+            mic_mm = np.lib.format.open_memmap(
+                paired_mic_path,
+                mode="w+",
+                dtype=np.float32,
+                shape=(total_segments, *spec_shape),
+            )
+            geo_mm = np.lib.format.open_memmap(
+                paired_geo_path,
+                mode="w+",
+                dtype=np.float32,
+                shape=(total_segments, *spec_shape),
+            )
+            print(f"  Allocated memmap for {total_segments:,} segments {spec_shape}")
 
-        mic_keys = [row["segment_key"] for row in mic_meta]
-        geo_keys = [row["segment_key"] for row in geo_meta]
-        if mic_keys != geo_keys:
-            raise ValueError(f"Mic/geo segment mismatch in {mic_path.name}")
-
-        for row, mic_spec, geo_spec in zip(mic_meta, mic_specs, geo_specs):
+        batch_size = len(mic_meta)
+        for offset, (row, mic_spec, geo_spec) in enumerate(
+            zip(mic_meta, mic_specs, geo_specs)
+        ):
             labels = metadata_row_labels(row["run_id"])
-            metadata_rows.append({**row, **labels})
-            mic_specs_all.append(mic_spec)
-            geo_specs_all.append(_resize_geo_to_mic(geo_spec, mic_spec.shape))
+            metadata_rows.append({**row, "scene_id": array_prefix, **labels})
+            mic_mm[write_idx + offset] = mic_spec
+            geo_mm[write_idx + offset] = _resize_geo_to_mic(geo_spec, mic_spec.shape)
+        write_idx += batch_size
 
-        del mic_df, geo_df
+        del mic_specs, geo_specs
+        gc.collect()
 
-    mic_array = np.stack(mic_specs_all)
-    geo_array = np.stack(geo_specs_all)
+    if mic_mm is None or write_idx == 0:
+        raise FileNotFoundError(f"No usable mic/geo pairs found in {data_dir}.")
+
+    mic_mm.flush()
+    geo_mm.flush()
+
+    if write_idx != mic_mm.shape[0]:
+        # Trim oversized memmap (estimate overshoot or skipped files).
+        mic_array = np.array(mic_mm[:write_idx], copy=True)
+        geo_array = np.array(geo_mm[:write_idx], copy=True)
+        del mic_mm, geo_mm
+        gc.collect()
+        paired_mic_path.unlink(missing_ok=True)
+        paired_geo_path.unlink(missing_ok=True)
+        np.save(paired_mic_path, mic_array)
+        np.save(paired_geo_path, geo_array)
+    else:
+        mic_array = mic_mm
+        geo_array = geo_mm
+        del mic_mm, geo_mm
+        gc.collect()
+
     metadata = pd.DataFrame(metadata_rows)
-
-    np.save(output_dir / "h24_paired_mic.npy", mic_array)
-    np.save(output_dir / "h24_paired_geo.npy", geo_array)
-    metadata.to_parquet(output_dir / "h24_metadata.parquet", index=False)
+    metadata.to_parquet(output_dir / f"{array_prefix}_metadata.parquet", index=False)
 
     # Drop stale normalized caches so trainer rebuilds from resized geo.
-    for stale in ("h24_paired_mic_norm.npy", "h24_paired_geo_norm.npy"):
+    for stale in (f"{array_prefix}_paired_mic_norm.npy", f"{array_prefix}_paired_geo_norm.npy"):
         stale_path = output_dir / stale
         if stale_path.exists():
             stale_path.unlink()
 
     # Legacy single-modality caches (same data, new layout).
-    np.save(output_dir / "h24_mic_spectrograms.npy", mic_array)
-    np.save(output_dir / "h24_geo_spectrograms.npy", geo_array)
+    np.save(output_dir / f"{array_prefix}_mic_spectrograms.npy", np.asarray(mic_array))
+    np.save(output_dir / f"{array_prefix}_geo_spectrograms.npy", np.asarray(geo_array))
 
     return mic_array, geo_array, metadata
 

@@ -1,0 +1,111 @@
+{
+  "hardware": {
+    "device": "cpu",
+    "cuda_available": false,
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "n_val": 200,
+  "expand_cost_ms": 1194.7002304019916,
+  "cascade_table": {
+    "n": 200,
+    "accuracy": 0.99,
+    "kdet_rate": 0.06,
+    "deadline_override_rate": 0.0,
+    "latency_ms": {
+      "mean": 724.800246541854,
+      "p50": 112.63710004277527,
+      "p95": 10158.522300189361,
+      "max": 10158.522300189361
+    },
+    "ki_fire_counts": {
+      "K0": 200,
+      "K1": 12,
+      "K2": 78,
+      "K3": 59,
+      "K4": 149,
+      "Kdet": 12
+    },
+    "branch_counts": {
+      "K0:background": 1,
+      "K0:suv": 149
+    }
+  },
+  "cascade_live": {
+    "n": 200,
+    "accuracy": 0.99,
+    "kdet_rate": 0.06,
+    "deadline_override_rate": 0.0,
+    "latency_ms": {
+      "mean": 617.0219375193119,
+      "p50": 10.980550083331764,
+      "p95": 10033.529999968596,
+      "max": 10046.990599948913
+    },
+    "ki_fire_counts": {
+      "K0": 200,
+      "K1": 12,
+      "K2": 78,
+      "K3": 59,
+      "K4": 149,
+      "Kdet": 12
+    },
+    "branch_counts": {
+      "K0:background": 1,
+      "K0:suv": 149
+    }
+  },
+  "delta_mean_latency_ms": -107.77830902254209,
+  "accuracy_unchanged": true,
+  "per_ki_table_vs_profile": [
+    {
+      "ki": "K0",
+      "table_avg_ms": 12.191041999030858,
+      "table_wcet_ms": 104.71660015173256,
+      "live_profile_avg_ms": 12.191041999030858,
+      "live_profile_wcet_ms": 104.71660015173256
+    },
+    {
+      "ki": "K1",
+      "table_avg_ms": 8.561015005689114,
+      "table_wcet_ms": 10.85290010087192,
+      "live_profile_avg_ms": 8.561015005689114,
+      "live_profile_wcet_ms": 10.85290010087192
+    },
+    {
+      "ki": "K2",
+      "table_avg_ms": 5.797957987524569,
+      "table_wcet_ms": 9.059199830517173,
+      "live_profile_avg_ms": 5.797957987524569,
+      "live_profile_wcet_ms": 9.059199830517173
+    },
+    {
+      "ki": "K3",
+      "table_avg_ms": 14.999454009812325,
+      "table_wcet_ms": 33.89360010623932,
+      "live_profile_avg_ms": 14.999454009812325,
+      "live_profile_wcet_ms": 33.89360010623932
+    },
+    {
+      "ki": "K4",
+      "table_avg_ms": 2.598271006718278,
+      "table_wcet_ms": 7.920499891042709,
+      "live_profile_avg_ms": 2.598271006718278,
+      "live_profile_wcet_ms": 7.920499891042709
+    },
+    {
+      "ki": "K5",
+      "table_avg_ms": 3.0897149886004627,
+      "table_wcet_ms": 25.559799978509545,
+      "live_profile_avg_ms": 3.0897149886004627,
+      "live_profile_wcet_ms": 25.559799978509545
+    },
+    {
+      "ki": "K6",
+      "table_avg_ms": 5.841721002943814,
+      "table_wcet_ms": 34.59289995953441,
+      "live_profile_avg_ms": 5.841721002943814,
+      "live_profile_wcet_ms": 34.59289995953441
+    }
+  ],
+  "note": "cascade_table uses wcet_profile.json per Ki; cascade_live sums measured perf_counter forwards. Re-run on NVIDIA Jetson for paper hardware numbers."
+}
