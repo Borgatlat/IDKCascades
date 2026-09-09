@@ -2,8 +2,6 @@
 
 Trying to recreate the results of the Timely Classification of Hierarchical Classes (https://eprints.whiterose.ac.uk/id/eprint/231704/) paper
 
-**WIP manuscript (joint hierarchical layout + threshold optimization):** see [`paper/`](paper/) — `wip_joint_hierarchical_idk.tex`, `citations.bib`, and revision notes.
-
 This repo will focus on the M3N-VC dataset
 
 The dataset (used in the paper) comprises of
